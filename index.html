@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="icon" type="image/png" href="g3construction.jpeg" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <div class="main-layout">
+        <header id="navbar" class="navbar">
+            <div class="navbar-container">
+                <a class="logo" href="#home">Corbo Digital</a>
+                <nav class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <video autoplay muted loop playsinline class="background-video">
+                    <source src="construction-video.mp4" type="video/mp4" />
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="reveal-text">Corbo Digital</h1>
+                    <p>Where construction meets digital innovation.</p>
+                    <a href="#projects" class="btn-hero">Explore Our Work</a>
+                </div>
+                <div class="scroll-indicator"></div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section parallax" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+                <div class="text-content" data-aos="fade-right">
+                    <h2>About Us</h2>
+                    <p>
+                        We combine construction and technology to create immersive digital experiences,
+                        bringing your projects to life with cinematic storytelling and futuristic visuals.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 data-aos="fade-up">Our Projects</h2>
+                <div class="project-gallery">
+                    <img src="https://images.unsplash.com/photo-1581091215367-59ab6b94d21d" alt="Project 1" data-aos="zoom-in" />
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7" alt="Project 2" data-aos="zoom-in" data-aos-delay="100" />
+                    <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6" alt="Project 3" data-aos="zoom-in" data-aos-delay="200" />
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact-section" data-aos="fade-up">
+                <h2>Contact Us</h2>
+                <p>Ready to bring your digital vision to life?</p>
+                <a href="mailto:info@corbodigital.com" class="contact-btn">Get in Touch</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 Corbo Digital — All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const scrollIndicator = document.querySelector(".scroll-indicator");
+            const hero = document.querySelector(".hero");
+            const heroHeight = hero.offsetHeight;
+
+            window.addEventListener("scroll", () => {
+                const scrollY = window.scrollY;
+
+                // Move indicator proportionally along hero section
+                if (scrollY < heroHeight) {
+                    const progress = scrollY / heroHeight; // 0 → 1
+                    scrollIndicator.style.bottom = `${40 + progress * (heroHeight - 40)}px`;
+                } else {
+                    scrollIndicator.style.bottom = `${heroHeight}px`; // keep at bottom
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
