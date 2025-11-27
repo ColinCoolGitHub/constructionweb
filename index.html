@@ -17,6 +17,15 @@
         <header id="navbar" class="navbar">
             <div class="navbar-container">
                 <a class="logo" href="#home">Corbo Digital</a>
+
+                <!-- Burger button (mobile) -->
+                <button class="burger" style="" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Desktop / Mobile nav -->
                 <nav class="nav-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
@@ -27,47 +36,126 @@
         </header>
 
         <main>
-            <!-- Hero Section -->
-            <section id="home" class="hero">
-                <video autoplay muted loop playsinline class="background-video">
-                    <source src="construction-video.mp4" type="video/mp4" />
-                </video>
-                <div class="hero-overlay"></div>
-                <div class="hero-content" data-aos="fade-up">
-                    <h1 class="reveal-text">Corbo Digital</h1>
-                    <p>Where construction meets digital innovation.</p>
-                    <a href="#projects" class="btn-hero">Explore Our Work</a>
-                </div>
-                <div class="scroll-indicator"></div>
-            </section>
+            <main>
+                <!-- Hero Section -->
+                <section id="home" class="hero">
+                    <video autoplay muted loop playsinline class="background-video">
+                        <source src="construction-video.mp4" type="video/mp4" />
+                    </video>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content" data-aos="fade-up">
+                        <h1 class="reveal-text">Corbo Digital</h1>
+                        <p>Where construction meets digital innovation.</p>
+                        <!--<a href="#projects" class="btn-hero">Explore Our Work</a>-->
+                    </div>
+                    <div class="scroll-indicator"></div>
+                </section>
 
-            <!-- About Section -->
-            <section id="about" class="section parallax" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
-                <div class="text-content" data-aos="fade-right">
-                    <h2>About Us</h2>
-                    <p>
-                        We combine construction and technology to create immersive digital experiences,
-                        bringing your projects to life with cinematic storytelling and futuristic visuals.
-                    </p>
-                </div>
-            </section>
+                <!-- About Section -->
+                <section id="about" class="section parallax" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');">
+                    <div class="text-content" data-aos="fade-right">
+                        <h2>About Us</h2>
+                        <p>
+                            We collaborate with builders and developers to showcase their projects with modern,
+                            cinematic visuals. From ground-up homes to multi-unit developments, we help tell the
+                            story behind the work.
+                        </p>
+                    </div>
+                </section>
 
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <h2 data-aos="fade-up">Our Projects</h2>
-                <div class="project-gallery">
-                    <img src="https://images.unsplash.com/photo-1581091215367-59ab6b94d21d" alt="Project 1" data-aos="zoom-in" />
-                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7" alt="Project 2" data-aos="zoom-in" data-aos-delay="100" />
-                    <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6" alt="Project 3" data-aos="zoom-in" data-aos-delay="200" />
-                </div>
-            </section>
+                <!-- STATS / HIGHLIGHTS SECTION -->
+                <section class="section stats-section">
+                    <div class="stats-header" data-aos="fade-up">
+                        <h2>Building Trust, One Project at a Time</h2>
+                        <p>Real results backed by experience on residential and light commercial projects.</p>
+                    </div>
 
-            <!-- Contact Section -->
-            <section id="contact" class="section contact-section" data-aos="fade-up">
-                <h2>Contact Us</h2>
-                <p>Ready to bring your digital vision to life?</p>
-                <a href="mailto:info@corbodigital.com" class="contact-btn">Get in Touch</a>
-            </section>
+                    <div class="stats-grid">
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Years in Construction</div>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-number" data-target="150">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-number" data-target="95">0</div>
+                            <div class="stat-label">Client Satisfaction (%)</div>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-number" data-target="30">0</div>
+                            <div class="stat-label">Active Partner Trades</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SERVICES / WHAT WE DO -->
+                <section class="section services-section">
+                    <div class="services-header" data-aos="fade-up">
+                        <h2>What We Build</h2>
+                        <p>
+                            From excavation to final finishes, we coordinate every phase of a new build so you can
+                            move in with confidence.
+                        </p>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="services-column" data-aos="fade-right">
+                            <h3>Structural & Shell</h3>
+                            <ul class="service-list">
+                                <li>Full Ground-Up Home Construction</li>
+                                <li>Excavation & Foundation Work</li>
+                                <li>Concrete Slabs & Footings</li>
+                                <li>Structural Framing (Wood & Light Steel)</li>
+                                <li>Roof Framing & Roof Installation</li>
+                                <li>Exterior Sheathing & Weather Barriers</li>
+                            </ul>
+                        </div>
+
+                        <div class="services-column" data-aos="fade-up">
+                            <h3>Building Envelope</h3>
+                            <ul class="service-list">
+                                <li>Exterior Cladding & Siding</li>
+                                <li>Energy-Efficient Windows & Doors</li>
+                                <li>Insulation & Air Sealing</li>
+                                <li>Waterproofing & Moisture Control</li>
+                                <li>Decks, Balconies & Railings</li>
+                            </ul>
+                        </div>
+
+                        <div class="services-column" data-aos="fade-left">
+                            <h3>Interior & Finishes</h3>
+                            <ul class="service-list">
+                                <li>Interior Partitions & Drywall</li>
+                                <li>Soundproofing & Thermal Insulation</li>
+                                <li>Taping, Sanding & Painting</li>
+                                <li>Flooring Installation (Wood, Tile, Vinyl)</li>
+                                <li>Trim, Doors & Custom Millwork</li>
+                                <li>Kitchen & Bathroom Fit-Outs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="section">
+                    <h2 data-aos="fade-up">Our Projects</h2>
+                    <div class="project-gallery">
+                        <img src="g3construction.jpeg" alt="Project 1" data-aos="zoom-in" />
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7" alt="Project 2" data-aos="zoom-in" data-aos-delay="100" />
+                        <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6" alt="Project 3" data-aos="zoom-in" data-aos-delay="200" />
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="section contact-section" data-aos="fade-up">
+                    <h2>Contact Us</h2>
+                    <p>Ready to bring your digital vision to life?</p>
+                    <a href="mailto:info@corbodigital.com" class="contact-btn">Get in Touch</a>
+                </section>
+            </main>
+
         </main>
 
         <footer class="footer">
@@ -104,6 +192,163 @@
                 }
             });
 
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollIndicator = document.querySelector(".scroll-indicator");
+            const hero = document.querySelector(".hero");
+            const heroHeight = hero.offsetHeight;
+
+            window.addEventListener("scroll", () => {
+                const scrollY = window.scrollY;
+
+                if (scrollY < heroHeight) {
+                    const progress = scrollY / heroHeight;
+                    scrollIndicator.style.bottom = `${40 + progress * (heroHeight - 40)}px`;
+                } else {
+                    scrollIndicator.style.bottom = `${heroHeight}px`;
+                }
+            });
+
+            // === STATS COUNTER ON SCROLL ===
+            const counters = document.querySelectorAll(".stat-number");
+            let countersStarted = false;
+
+            const startCounters = () => {
+                if (countersStarted) return;
+                countersStarted = true;
+
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute("data-target"), 10);
+                    let current = 0;
+                    const duration = 1500; // ms
+                    const steps = 60;
+                    const increment = target / steps;
+                    const stepTime = duration / steps;
+
+                    const interval = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(interval);
+                        }
+                        counter.textContent = Math.floor(current);
+                    }, stepTime);
+                });
+            };
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startCounters();
+                        }
+                    });
+                },
+                { threshold: 0.3 }
+            );
+
+            const statsSection = document.querySelector(".stats-section");
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
+
+    <!--<script>
+        // Always start at top on full load
+        window.addEventListener("load", () => {
+            window.scrollTo(0, 0);
+        });
+    </script>-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // AOS init
+            if (window.AOS) {
+                AOS.init({ duration: 1000, once: true });
+            }
+
+            // Scroll indicator logic
+            const scrollIndicator = document.querySelector(".scroll-indicator");
+            const hero = document.querySelector(".hero");
+            if (scrollIndicator && hero) {
+                const heroHeight = hero.offsetHeight;
+
+                window.addEventListener("scroll", () => {
+                    const scrollY = window.scrollY;
+
+                    if (scrollY < heroHeight) {
+                        const progress = scrollY / heroHeight;
+                        scrollIndicator.style.bottom = `${40 + progress * (heroHeight - 40)}px`;
+                    } else {
+                        scrollIndicator.style.bottom = `${heroHeight}px`;
+                    }
+                });
+            }
+
+            // Burger menu logic
+            const burger = document.querySelector(".burger");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (burger && navLinks) {
+                burger.addEventListener("click", () => {
+                    burger.classList.toggle("open");
+                    navLinks.classList.toggle("open");
+                });
+
+                // Close menu when a link is clicked (for smooth navigation)
+                navLinks.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        burger.classList.remove("open");
+                        navLinks.classList.remove("open");
+                    });
+                });
+            }
+
+            // Stats counter (if you already added stats-section)
+            const counters = document.querySelectorAll(".stat-number");
+            let countersStarted = false;
+
+            const startCounters = () => {
+                if (countersStarted) return;
+                countersStarted = true;
+
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute("data-target"), 10);
+                    let current = 0;
+                    const duration = 1500;
+                    const steps = 60;
+                    const increment = target / steps;
+                    const stepTime = duration / steps;
+
+                    const interval = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(interval);
+                        }
+                        counter.textContent = Math.floor(current);
+                    }, stepTime);
+                });
+            };
+
+            const statsSection = document.querySelector(".stats-section");
+            if (statsSection && counters.length > 0) {
+                const observer = new IntersectionObserver(
+                    entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                startCounters();
+                            }
+                        });
+                    },
+                    { threshold: 0.3 }
+                );
+                observer.observe(statsSection);
+            }
         });
     </script>
 
