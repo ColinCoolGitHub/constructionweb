@@ -486,16 +486,27 @@ const reviewsTrack = document.querySelector('.reviews-track');
 const reviewCards = document.querySelectorAll('.review-card');
 
 if (reviewsSection && reviewsTrack && reviewCards.length > 0) {
-    let currentIndex = 0;
 
-    // Rotate to specific review
+    let currentIndex = 0;
+    let animTimeout = null;
+
+    // Rotate to specific review with direction class
     const rotateCarousel = (direction) => {
+        // Remove any previous direction class
+        reviewsTrack.classList.remove('carousel-anim-left', 'carousel-anim-right');
         if (direction === 'next') {
+            reviewsTrack.classList.add('carousel-anim-right');
             currentIndex = (currentIndex + 1) % reviewCards.length;
         } else {
+            reviewsTrack.classList.add('carousel-anim-left');
             currentIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
         }
         updateCarousel();
+        // Remove the direction class after animation duration
+        clearTimeout(animTimeout);
+        animTimeout = setTimeout(() => {
+            reviewsTrack.classList.remove('carousel-anim-left', 'carousel-anim-right');
+        }, 700); // match CSS transition duration
     };
 
     // Update carousel display
