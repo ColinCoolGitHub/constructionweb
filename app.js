@@ -254,55 +254,36 @@ if (impactSection && impactPanel && impactWords.length) {
         ease: 'power2.out'
     }, '-=0.5');
 
-    // Horizontal wipe - panel slides left to reveal About section underneath
+    // Slide left to right and fade out animation - panel moves left to reveal About section
     gsap.to(impactPanel, {
-        xPercent: -100,
-        ease: 'none',
+        x: '-100%',
+        ease: 'power2.inOut',
         scrollTrigger: {
             trigger: impactSection,
             start: 'top top',
-            end: '+=100%',
+            end: '+=200%',
             scrub: 1,
             pin: true,
             pinSpacing: true,
-            onLeave: () => {
-                gsap.to(impactScrollHint, { opacity: 0, duration: 0.3 });
-            },
-            onEnterBack: () => {
-                gsap.to(impactScrollHint, { opacity: 1, duration: 0.3 });
-            }
+            markers: false
         }
     });
 
-    // Parallax effect - each word moves at different speeds
-    impactWords.forEach((word) => {
-        const speed = parseFloat(word.dataset.speed) || 1;
-        
-        gsap.to(word, {
-            x: -150 * (speed - 0.9),
-            ease: 'none',
+    // About section slides in from right while impact slides left
+    const wipeReveal = document.querySelector('.wipe-reveal');
+    if (wipeReveal) {
+        gsap.to(wipeReveal, {
+            x: 0,
+            opacity: 1,
+            ease: 'power2.inOut',
             scrollTrigger: {
                 trigger: impactSection,
                 start: 'top top',
-                end: '+=100%',
+                end: '+=200%',
                 scrub: 1
             }
         });
-    });
-
-    // Fill outline letters with white as you scroll
-    impactOutlineWords.forEach((word) => {
-        gsap.to(word, {
-            color: '#ffffff',
-            ease: 'none',
-            scrollTrigger: {
-                trigger: impactSection,
-                start: 'top top',
-                end: '+=60%',
-                scrub: 1
-            }
-        });
-    });
+    }
 }
 
 // ============================================
