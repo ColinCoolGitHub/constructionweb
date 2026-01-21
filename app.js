@@ -480,33 +480,62 @@ if (workCta) {
     });
 }
 
-// Reviews horizontal scroll animation
+// Reviews Section - 3-Card Carousel with Click Navigation
 const reviewsSection = document.querySelector('.reviews-section');
 const reviewsTrack = document.querySelector('.reviews-track');
-const reviewsProgressBar = document.querySelector('.reviews-progress-bar');
+const reviewCards = document.querySelectorAll('.review-card');
 
-if (reviewsSection && reviewsTrack) {
-    // Calculate how far to scroll (total width minus one card width to show last card fully)
-    const getScrollAmount = () => {
-        return -(reviewsTrack.scrollWidth - window.innerWidth + 60);
+if (reviewsSection && reviewsTrack && reviewCards.length > 0) {
+    let currentIndex = 0;
+
+    // Rotate to specific review
+    const rotateCarousel = (direction) => {
+        if (direction === 'next') {
+            currentIndex = (currentIndex + 1) % reviewCards.length;
+        } else {
+            currentIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
+        }
+        updateCarousel();
     };
 
-    gsap.to(reviewsTrack, {
-        x: getScrollAmount,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: reviewsSection,
-            start: 'top 20%',  // Start when section is near top of viewport
-            end: '+=2000',     // Scroll for 2000px - slower, more time to read
-            scrub: 1.5,        // Smoother scrub
-            onUpdate: (self) => {
-                // Update progress bar
-                if (reviewsProgressBar) {
-                    reviewsProgressBar.style.width = `${self.progress * 100}%`;
-                }
+    // Update carousel display
+    const updateCarousel = () => {
+        reviewCards.forEach((card, index) => {
+            card.classList.remove('left', 'center', 'right', 'hidden');
+            
+            let position = (index - currentIndex + reviewCards.length) % reviewCards.length;
+            
+            if (position === 0) {
+                card.classList.add('center');
+            } else if (position === 1) {
+                card.classList.add('right');
+            } else if (position === reviewCards.length - 1) {
+                card.classList.add('left');
+            } else {
+                card.classList.add('hidden');
             }
-        }
+        });
+    };
+
+    // Add click handlers to cards
+    reviewCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            // Calculate which direction to rotate
+            let position = (index - currentIndex + reviewCards.length) % reviewCards.length;
+            
+            if (position === 1) {
+                // Right card clicked - rotate next
+                rotateCarousel('next');
+            } else if (position === reviewCards.length - 1) {
+                // Left card clicked - rotate previous
+                rotateCarousel('prev');
+            }
+            // Center card does nothing
+        });
     });
+
+    // Initial setup
+    updateCarousel();
 }
 
 // Contact section animations
