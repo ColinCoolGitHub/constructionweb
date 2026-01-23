@@ -674,4 +674,281 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
+// ============================================
+// LANGUAGE SWITCHING (FR/EN)
+// ============================================
+const translations = {
+    fr: {
+        // Navigation
+        'nav.home': 'Accueil',
+        'nav.about': '\u00C0 propos',
+        'nav.services': 'Services',
+        'nav.work': 'R\u00E9alisations',
+        'nav.contact': 'Contact',
+        
+        // Hero
+        'hero.tag': 'Studio de Production Num\u00E9rique',
+        'hero.title1': 'Nous Cr\u00E9ons',
+        'hero.title2': 'des Exp\u00E9riences',
+        'hero.title3': 'Num\u00E9riques',
+        'hero.subtitle': 'L\u00E0 o\u00F9 la construction rencontre l\'innovation num\u00E9rique. Nous transformons vos visions en r\u00E9alit\u00E9s visuelles \u00E9poustouflantes.',
+        'hero.cta1': 'Voir Nos R\u00E9alisations',
+        'hero.cta2': 'Nous Contacter',
+        'hero.scroll': 'D\u00E9filer',
+        
+        // Impact
+        'impact.line1': 'Cr\u00E9er',
+        'impact.line2': 'des Histoires',
+        'impact.line3a': '\u00C0 Travers',
+        'impact.line3b': 'la Construction',
+        'impact.line4a': 'les M\u00E9dias',
+        'impact.line4b': 'Num\u00E9riques',
+        
+        // About
+        'about.tag': '\u00C0 Propos',
+        'about.title': 'Qui Sommes-Nous',
+        'about.text1': 'Nous sommes un studio cr\u00E9atif qui fait le pont entre la construction physique et la narration num\u00E9rique.',
+        'about.text2': 'Des maisons individuelles aux d\u00E9veloppements multi-unit\u00E9s, nous collaborons avec les constructeurs et promoteurs pour mettre en valeur leurs projets avec des visuels modernes et cin\u00E9matographiques. Chaque image que nous capturons raconte l\'histoire du savoir-faire, du d\u00E9vouement et de l\'innovation.',
+        'about.stat1': 'Ann\u00E9es d\'Exp\u00E9rience',
+        'about.stat2': 'Projets R\u00E9alis\u00E9s',
+        'about.stat3': 'Clients Satisfaits',
+        
+        // Services
+        'services.tag': 'Ce Que Nous Faisons',
+        'services.title': 'Des services qui transforment votre vision',
+        'services.s1.title': 'Production Num\u00E9rique',
+        'services.s1.desc': 'Production vid\u00E9o de haute qualit\u00E9 mettant en valeur les projets de construction du concept \u00E0 la r\u00E9alisation.',
+        'services.s1.f1': 'Films de Projets Cin\u00E9matographiques',
+        'services.s1.f2': 'Couverture A\u00E9rienne par Drone',
+        'services.s1.f3': 'Documentation Time-lapse',
+        'services.s2.title': 'Visualisation 3D',
+        'services.s2.desc': 'Rendus 3D photor\u00E9alistes et visites virtuelles donnant vie aux plans architecturaux.',
+        'services.s2.f1': 'Rendus Architecturaux',
+        'services.s2.f2': 'Visites Virtuelles',
+        'services.s2.f3': 'Exp\u00E9riences Interactives',
+        'services.s3.title': 'Web & Digital',
+        'services.s3.desc': 'Sites web personnalis\u00E9s et plateformes num\u00E9riques con\u00E7us pour mettre en valeur votre portfolio.',
+        'services.s3.f1': 'Sites Portfolio',
+        'services.s3.f2': 'Galeries Interactives',
+        'services.s3.f3': 'Marketing Digital',
+        'services.s4.title': 'Photographie',
+        'services.s4.desc': 'Photographie professionnelle capturant chaque d\u00E9tail de vos projets de construction.',
+        'services.s4.f1': 'Photographie Architecturale',
+        'services.s4.f2': 'Documentation de Progression',
+        'services.s4.f3': 'Photographie A\u00E9rienne',
+        
+        // Reveal Section
+        'reveal.tag': '\u00C0 la Une',
+        'reveal.title': 'Chaque Image<br>Raconte une Histoire',
+        'reveal.text': 'Notre \u00E9quipe combine expertise technique et vision artistique pour cr\u00E9er du contenu qui repr\u00E9sente vraiment votre travail. De la premi\u00E8re fondation \u00E0 la visite finale, nous sommes l\u00E0 pour capturer chaque \u00E9tape importante.',
+        'reveal.cta': 'D\u00E9marrer Votre Projet',
+        
+        // Work Section
+        'work.tag': 'Nos R\u00E9alisations',
+        'work.title': 'Projets S\u00E9lectionn\u00E9s',
+        'work.subtitle': 'Cliquez sur un projet pour en d\u00E9couvrir plus',
+        'work.cta': 'D\u00E9marrer Votre Projet',
+        'work.viewProject': 'Voir le Projet',
+        'work.duration': 'Dur\u00E9e',
+        'work.services': 'Services',
+        'work.p1.cat': 'Commercial',
+        'work.p1.title': 'Complexe Tour Moderne',
+        'work.p1.desc': 'Documentation num\u00E9rique compl\u00E8te d\'un d\u00E9veloppement commercial de 20 \u00E9tages au centre-ville de Montr\u00E9al. Comprend des images par drone, time-lapse de construction et visualisation 3D.',
+        'work.p1.dur': '18 mois',
+        'work.p2.cat': 'R\u00E9sidentiel',
+        'work.p2.title': 'R\u00E9sidence de Luxe',
+        'work.p2.desc': 'Pr\u00E9sentation cin\u00E9matographique d\'une maison sur mesure de 4,5M$ \u00E0 Tremblant. Documentation compl\u00E8te du design int\u00E9rieur et photographie lifestyle.',
+        'work.p2.dur': '12 mois',
+        'work.p3.cat': 'Mixte',
+        'work.p3.title': 'D\u00E9veloppement Urbain',
+        'work.p3.desc': 'R\u00E9sidentiel multi-unit\u00E9s avec commerce au rez-de-chauss\u00E9e. Documentation compl\u00E8te incluant visites virtuelles pour le marketing pr\u00E9-vente.',
+        'work.p3.dur': '24 mois',
+        'work.p4.cat': 'R\u00E9sidentiel',
+        'work.p4.title': 'Villa Contemporaine',
+        'work.p4.desc': 'Chef-d\'\u0153uvre architectural moderne avec design durable. Pr\u00E9-visualisation 3D et couverture drone compl\u00E8te.',
+        'work.p4.dur': '14 mois',
+        
+        // Reviews
+        'reviews.tag': 'T\u00E9moignages',
+        'reviews.title': 'Ce Que Disent Nos Clients',
+        
+        // Contact
+        'contact.tag': 'Nous Contacter',
+        'contact.title': 'Cr\u00E9ons quelque chose d\'incroyable ensemble',
+        'contact.subtitle': 'Pr\u00EAt \u00E0 donner vie \u00E0 vos projets de construction gr\u00E2ce \u00E0 du contenu num\u00E9rique \u00E9poustouflant?',
+        'contact.email': 'Courriel',
+        'contact.phone': 'T\u00E9l\u00E9phone',
+        'contact.location': 'Emplacement',
+        'contact.city': 'Montr\u00E9al, QC',
+        'contact.cta': 'D\u00E9marrer un Projet',
+        
+        // Footer
+        'footer.copyright': '\u00A9 2025 Corbo Digital \u2014 Tous droits r\u00E9serv\u00E9s.'
+    },
+    en: {
+        // Navigation
+        'nav.home': 'Home',
+        'nav.about': 'About',
+        'nav.services': 'Services',
+        'nav.work': 'Work',
+        'nav.contact': 'Contact',
+        
+        // Hero
+        'hero.tag': 'Digital Production Studio',
+        'hero.title1': 'We Build',
+        'hero.title2': 'Digital',
+        'hero.title3': 'Experiences',
+        'hero.subtitle': 'Where construction meets digital innovation. We transform visions into stunning visual realities.',
+        'hero.cta1': 'View Our Work',
+        'hero.cta2': 'Get in Touch',
+        'hero.scroll': 'Scroll',
+        
+        // Impact
+        'impact.line1': 'Crafting',
+        'impact.line2': 'Stories',
+        'impact.line3a': 'Through',
+        'impact.line3b': 'Construction',
+        'impact.line4a': 'Digital',
+        'impact.line4b': 'Media',
+        
+        // About
+        'about.tag': 'About Us',
+        'about.title': 'Who We Are',
+        'about.text1': 'We are a creative studio that bridges the gap between physical construction and digital storytelling.',
+        'about.text2': 'From ground-up homes to multi-unit developments, we collaborate with builders and developers to showcase their projects with modern, cinematic visuals. Every frame we capture tells the story of craftsmanship, dedication, and innovation.',
+        'about.stat1': 'Years Experience',
+        'about.stat2': 'Projects Completed',
+        'about.stat3': 'Client Satisfaction',
+        
+        // Services
+        'services.tag': 'What We Do',
+        'services.title': 'Services that transform your vision',
+        'services.s1.title': 'Digital Production',
+        'services.s1.desc': 'High-quality video production showcasing construction projects from concept to completion.',
+        'services.s1.f1': 'Cinematic Project Films',
+        'services.s1.f2': 'Drone Aerial Coverage',
+        'services.s1.f3': 'Time-lapse Documentation',
+        'services.s2.title': '3D Visualization',
+        'services.s2.desc': 'Photorealistic 3D renders and virtual tours bringing architectural plans to life.',
+        'services.s2.f1': 'Architectural Renders',
+        'services.s2.f2': 'Virtual Walkthroughs',
+        'services.s2.f3': 'Interactive Experiences',
+        'services.s3.title': 'Web & Digital',
+        'services.s3.desc': 'Custom websites and digital platforms designed to showcase your portfolio.',
+        'services.s3.f1': 'Portfolio Websites',
+        'services.s3.f2': 'Interactive Galleries',
+        'services.s3.f3': 'Digital Marketing',
+        'services.s4.title': 'Photography',
+        'services.s4.desc': 'Professional photography capturing every detail of your construction projects.',
+        'services.s4.f1': 'Architectural Photography',
+        'services.s4.f2': 'Progress Documentation',
+        'services.s4.f3': 'Aerial Photography',
+        
+        // Reveal Section
+        'reveal.tag': 'Featured',
+        'reveal.title': 'Every Frame<br>Tells a Story',
+        'reveal.text': 'Our team combines technical expertise with artistic vision to create content that truly represents your work. From the first foundation pour to the final walkthrough, we\'re there to capture every milestone.',
+        'reveal.cta': 'Start Your Project',
+        
+        // Work Section
+        'work.tag': 'Our Work',
+        'work.title': 'Selected Projects',
+        'work.subtitle': 'Click on a project to discover more',
+        'work.cta': 'Start Your Project',
+        'work.viewProject': 'View Project',
+        'work.duration': 'Duration',
+        'work.services': 'Services',
+        'work.p1.cat': 'Commercial',
+        'work.p1.title': 'Modern Tower Complex',
+        'work.p1.desc': 'Full digital documentation of a 20-story commercial development in downtown Montreal. Includes drone footage, time-lapse construction, and 3D visualization.',
+        'work.p1.dur': '18 months',
+        'work.p2.cat': 'Residential',
+        'work.p2.title': 'Luxury Residence',
+        'work.p2.desc': 'Cinematic showcase of a custom $4.5M home construction in Tremblant. Complete with interior design documentation and lifestyle photography.',
+        'work.p2.dur': '12 months',
+        'work.p3.cat': 'Mixed-Use',
+        'work.p3.title': 'Urban Development',
+        'work.p3.desc': 'Multi-unit residential with ground-floor retail space. Full documentation including virtual tours for pre-sales marketing.',
+        'work.p3.dur': '24 months',
+        'work.p4.cat': 'Residential',
+        'work.p4.title': 'Contemporary Villa',
+        'work.p4.desc': 'Modern architectural masterpiece featuring sustainable design. 3D pre-visualization and complete drone coverage package.',
+        'work.p4.dur': '14 months',
+        
+        // Reviews
+        'reviews.tag': 'Testimonials',
+        'reviews.title': 'What Our Clients Say',
+        
+        // Contact
+        'contact.tag': 'Get in Touch',
+        'contact.title': 'Let\'s create something amazing together',
+        'contact.subtitle': 'Ready to bring your construction projects to life through stunning digital content?',
+        'contact.email': 'Email',
+        'contact.phone': 'Phone',
+        'contact.location': 'Location',
+        'contact.city': 'Montreal, QC',
+        'contact.cta': 'Start a Project',
+        
+        // Footer
+        'footer.copyright': '© 2025 Corbo Digital — All rights reserved.'
+    }
+};
+
+// Language state
+let currentLang = localStorage.getItem('preferred-lang') || 'fr';
+
+// Initialize language on page load
+function initLanguage() {
+    setLanguage(currentLang);
+    updateLangButtons();
+}
+
+// Set language
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('preferred-lang', lang);
+    document.documentElement.lang = lang;
+    
+    // Update page title
+    document.title = lang === 'fr' 
+        ? 'Corbo Digital | La Construction Rencontre l\'Innovation'
+        : 'Corbo Digital | Construction Meets Innovation';
+    
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+    
+    updateLangButtons();
+}
+
+// Update active state of language buttons
+function updateLangButtons() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        const btnLang = btn.getAttribute('data-lang');
+        btn.classList.toggle('active', btnLang === currentLang);
+    });
+}
+
+// Add event listeners to language buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        if (lang !== currentLang) {
+            setLanguage(lang);
+        }
+    });
+});
+
+// Initialize language when DOM is ready
+document.addEventListener('DOMContentLoaded', initLanguage);
+
+// Also call immediately in case DOM is already loaded
+if (document.readyState !== 'loading') {
+    initLanguage();
+}
+
 console.log('Corbo Digital - Website Loaded Successfully');

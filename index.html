@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corbo Digital | Construction Meets Innovation</title>
+    <title>Corbo Digital | La Construction Rencontre l'Innovation</title>
     <link rel="icon" type="image/png" href="Corbo_Digital-1.png" />
     <link rel="stylesheet" href="app.css" />
     <!-- Google Fonts - Oxanium & Urbanist -->
@@ -37,14 +37,20 @@
         </a>
 
         <nav class="nav-links">
-                <a href="#home" class="nav-link"><span>Home</span></a>
-                <a href="#about" class="nav-link"><span>About</span></a>
-                <a href="#services" class="nav-link"><span>Services</span></a>
-                <a href="#work" class="nav-link"><span>Work</span></a>
-                <a href="#contact" class="nav-link"><span>Contact</span></a>
-            </nav>
+            <a href="#home" class="nav-link"><span data-i18n="nav.home">Accueil</span></a>
+            <a href="#about" class="nav-link"><span data-i18n="nav.about">&Agrave; propos</span></a>
+            <a href="#services" class="nav-link"><span data-i18n="nav.services">Services</span></a>
+            <a href="#work" class="nav-link"><span data-i18n="nav.work">R&eacute;alisations</span></a>
+            <a href="#contact" class="nav-link"><span data-i18n="nav.contact">Contact</span></a>
+        </nav>
 
-            <button class="burger" aria-label="Toggle navigation">
+        <div class="lang-switcher">
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <button class="burger" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
             </button>
@@ -54,12 +60,17 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <nav class="mobile-nav">
-            <a href="#home" class="mobile-link">Home</a>
-            <a href="#about" class="mobile-link">About</a>
-            <a href="#services" class="mobile-link">Services</a>
-            <a href="#work" class="mobile-link">Work</a>
-            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="#home" class="mobile-link" data-i18n="nav.home">Accueil</a>
+            <a href="#about" class="mobile-link" data-i18n="nav.about">&Agrave; propos</a>
+            <a href="#services" class="mobile-link" data-i18n="nav.services">Services</a>
+            <a href="#work" class="mobile-link" data-i18n="nav.work">R&eacute;alisations</a>
+            <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
         </nav>
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
     </div>
 
     <main>
@@ -72,30 +83,30 @@
             <div class="hero-video-overlay"></div>
         </div>
         <div class="hero-content">
-                <div class="hero-tag">
-                    <span class="tag-line"></span>
-                    <span class="tag-text">Digital Production Studio</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line"><span class="title-word">We Build</span></span>
-                    <span class="title-line"><span class="title-word">Digital</span></span>
-                    <span class="title-line"><span class="title-word accent">Experiences</span></span>
-                </h1>
-                <p class="hero-subtitle">Where construction meets digital innovation. We transform visions into stunning visual realities.</p>
-                <div class="hero-cta">
-                    <a href="#work" class="btn-primary">
-                        <span>View Our Work</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        <span>Get in Touch</span>
-                    </a>
-                </div>
+            <div class="hero-tag">
+                <span class="tag-line"></span>
+                <span class="tag-text" data-i18n="hero.tag">Studio de Production Num&eacute;rique</span>
             </div>
-            <div class="scroll-indicator">
-                <span class="scroll-text">Scroll</span>
+            <h1 class="hero-title">
+                <span class="title-line"><span class="title-word" data-i18n="hero.title1">Nous Cr&eacute;ons</span></span>
+                <span class="title-line"><span class="title-word" data-i18n="hero.title2">des Exp&eacute;riences</span></span>
+                <span class="title-line"><span class="title-word accent" data-i18n="hero.title3">Num&eacute;riques</span></span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">L&agrave; o&ugrave; la construction rencontre l'innovation num&eacute;rique. Nous transformons vos visions en r&eacute;alit&eacute;s visuelles &eacute;poustouflantes.</p>
+            <div class="hero-cta">
+                <a href="#work" class="btn-primary">
+                    <span data-i18n="hero.cta1">Voir Nos R&eacute;alisations</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <span data-i18n="hero.cta2">Nous Contacter</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text" data-i18n="hero.scroll">D&eacute;filer</span>
                 <div class="scroll-line"></div>
             </div>
         </section>
@@ -108,19 +119,19 @@
                             <div class="impact-container">
                                 <div class="impact-text">
                                     <div class="impact-line">
-                                        <span class="impact-word" data-speed="0.8">Crafting</span>
+                                        <span class="impact-word" data-speed="0.8" data-i18n="impact.line1">Cr&eacute;er</span>
                                     </div>
                                     <div class="impact-line">
-                                        <span class="impact-word outline" data-speed="1">Stories</span>
+                                        <span class="impact-word outline" data-speed="1" data-i18n="impact.line2">des Histoires</span>
                                     </div>
                                     <div class="impact-line">
-                                        <span class="impact-word" data-speed="0.9">Through</span>
-                                        <span class="impact-word accent" data-speed="1.1">Construction</span>
+                                        <span class="impact-word" data-speed="0.9" data-i18n="impact.line3a">&Agrave; Travers</span>
+                                        <span class="impact-word accent" data-speed="1.1" data-i18n="impact.line3b">la Construction</span>
                                     </div>
                                     <div class="impact-line">
-                                        <span class="impact-word small">&</span>
-                                        <span class="impact-word outline" data-speed="1.2">Digital</span>
-                                        <span class="impact-word accent" data-speed="0.95">Media</span>
+                                        <span class="impact-word small">&amp;</span>
+                                        <span class="impact-word outline" data-speed="1.2" data-i18n="impact.line4a">les M&eacute;dias</span>
+                                        <span class="impact-word accent" data-speed="0.95" data-i18n="impact.line4b">Num&eacute;riques</span>
                                     </div>
                                 </div>
                             </div>
@@ -132,32 +143,32 @@
                                     <section class="about-section">
                                         <div class="about-container">
                                             <div class="about-header">
-                                                <span class="section-tag">About Us</span>
-                                                <h2 class="section-title">Who We Are</h2>
+                                                <span class="section-tag" data-i18n="about.tag">&Agrave; Propos</span>
+                                                <h2 class="section-title" data-i18n="about.title">Qui Sommes-Nous</h2>
                                             </div>
                                             <div class="about-grid">
                                                 <div class="about-content">
-                                                    <p class="about-text large">
-                                                        We are a creative studio that bridges the gap between physical construction and digital storytelling.
+                                                    <p class="about-text large" data-i18n="about.text1">
+                                                        Nous sommes un studio cr&eacute;atif qui fait le pont entre la construction physique et la narration num&eacute;rique.
                                                     </p>
-                                                    <p class="about-text">
-                                                        From ground-up homes to multi-unit developments, we collaborate with builders and developers to showcase their projects with modern, cinematic visuals. Every frame we capture tells the story of craftsmanship, dedication, and innovation.
+                                                    <p class="about-text" data-i18n="about.text2">
+                                                        Des maisons individuelles aux d&eacute;veloppements multi-unit&eacute;s, nous collaborons avec les constructeurs et promoteurs pour mettre en valeur leurs projets avec des visuels modernes et cin&eacute;matographiques. Chaque image que nous capturons raconte l'histoire du savoir-faire, du d&eacute;vouement et de l'innovation.
                                                     </p>
                                                     <div class="about-stats">
                                                         <div class="stat-item">
                                                             <span class="stat-number" data-target="10">0</span>
                                                             <span class="stat-plus">+</span>
-                                                            <span class="stat-label">Years Experience</span>
+                                                            <span class="stat-label" data-i18n="about.stat1">Ann&eacute;es d'Exp&eacute;rience</span>
                                                         </div>
                                                         <div class="stat-item">
                                                             <span class="stat-number" data-target="150">0</span>
                                                             <span class="stat-plus">+</span>
-                                                            <span class="stat-label">Projects Completed</span>
+                                                            <span class="stat-label" data-i18n="about.stat2">Projets R&eacute;alis&eacute;s</span>
                                                         </div>
                                                         <div class="stat-item">
                                                             <span class="stat-number" data-target="95">0</span>
                                                             <span class="stat-plus">%</span>
-                                                            <span class="stat-label">Client Satisfaction</span>
+                                                            <span class="stat-label" data-i18n="about.stat3">Clients Satisfaits</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,8 +190,8 @@
         <section id="services" class="services-section">
             <div class="services-container">
                 <div class="services-header">
-                    <span class="section-tag">What We Do</span>
-                    <h2 class="section-title split-text">Services that transform your vision</h2>
+                    <span class="section-tag" data-i18n="services.tag">Ce Que Nous Faisons</span>
+                    <h2 class="section-title split-text" data-i18n="services.title">Des services qui transforment votre vision</h2>
                 </div>
                 <div class="services-grid">
                     <div class="service-card" data-service="01">
@@ -190,183 +201,183 @@
                                 <path d="M8 21h8M12 17v4"/>
                             </svg>
                         </div>
-                        <h3 class="service-title">Digital Production</h3>
-                        <p class="service-desc">High-quality video production showcasing construction projects from concept to completion.</p>
-                        <ul class="service-features">
-                            <li>Cinematic Project Films</li>
-                            <li>Drone Aerial Coverage</li>
-                            <li>Time-lapse Documentation</li>
-                        </ul>
-                    </div>
-                    <div class="service-card" data-service="02">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">3D Visualization</h3>
-                        <p class="service-desc">Photorealistic 3D renders and virtual tours bringing architectural plans to life.</p>
-                        <ul class="service-features">
-                            <li>Architectural Renders</li>
-                            <li>Virtual Walkthroughs</li>
-                            <li>Interactive Experiences</li>
-                        </ul>
-                    </div>
-                    <div class="service-card" data-service="03">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Web & Digital</h3>
-                        <p class="service-desc">Custom websites and digital platforms designed to showcase your portfolio.</p>
-                        <ul class="service-features">
-                            <li>Portfolio Websites</li>
-                            <li>Interactive Galleries</li>
-                            <li>Digital Marketing</li>
-                        </ul>
-                    </div>
-                    <div class="service-card" data-service="04">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-                                <circle cx="12" cy="13" r="3"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Photography</h3>
-                        <p class="service-desc">Professional photography capturing every detail of your construction projects.</p>
-                        <ul class="service-features">
-                            <li>Architectural Photography</li>
-                            <li>Progress Documentation</li>
-                            <li>Aerial Photography</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            </section>
+                        <h3 class="service-title" data-i18n="services.s1.title">Production Num&eacute;rique</h3>
+                                        <p class="service-desc" data-i18n="services.s1.desc">Production vid&eacute;o de haute qualit&eacute; mettant en valeur les projets de construction du concept &agrave; la r&eacute;alisation.</p>
+                                        <ul class="service-features">
+                                            <li data-i18n="services.s1.f1">Films de Projets Cin&eacute;matographiques</li>
+                                            <li data-i18n="services.s1.f2">Couverture A&eacute;rienne par Drone</li>
+                                            <li data-i18n="services.s1.f3">Documentation Time-lapse</li>
+                                        </ul>
+                                    </div>
+                                    <div class="service-card" data-service="02">
+                                        <div class="service-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                <path d="M2 17l10 5 10-5"/>
+                                                <path d="M2 12l10 5 10-5"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="service-title" data-i18n="services.s2.title">Visualisation 3D</h3>
+                                        <p class="service-desc" data-i18n="services.s2.desc">Rendus 3D photor&eacute;alistes et visites virtuelles donnant vie aux plans architecturaux.</p>
+                                        <ul class="service-features">
+                                            <li data-i18n="services.s2.f1">Rendus Architecturaux</li>
+                                            <li data-i18n="services.s2.f2">Visites Virtuelles</li>
+                                            <li data-i18n="services.s2.f3">Exp&eacute;riences Interactives</li>
+                                        </ul>
+                                    </div>
+                                    <div class="service-card" data-service="03">
+                                        <div class="service-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="service-title" data-i18n="services.s3.title">Web &amp; Digital</h3>
+                                        <p class="service-desc" data-i18n="services.s3.desc">Sites web personnalis&eacute;s et plateformes num&eacute;riques con&ccedil;us pour mettre en valeur votre portfolio.</p>
+                                        <ul class="service-features">
+                                            <li data-i18n="services.s3.f1">Sites Portfolio</li>
+                                            <li data-i18n="services.s3.f2">Galeries Interactives</li>
+                                            <li data-i18n="services.s3.f3">Marketing Digital</li>
+                                        </ul>
+                                    </div>
+                                    <div class="service-card" data-service="04">
+                                        <div class="service-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                                                <circle cx="12" cy="13" r="3"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="service-title" data-i18n="services.s4.title">Photographie</h3>
+                                        <p class="service-desc" data-i18n="services.s4.desc">Photographie professionnelle capturant chaque d&eacute;tail de vos projets de construction.</p>
+                                        <ul class="service-features">
+                                            <li data-i18n="services.s4.f1">Photographie Architecturale</li>
+                                            <li data-i18n="services.s4.f2">Documentation de Progression</li>
+                                            <li data-i18n="services.s4.f3">Photographie A&eacute;rienne</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </section>
 
-            <!-- Image Reveal Section -->
-        <section class="image-reveal-section">
-            <div class="reveal-container">
-                <div class="reveal-image-wrapper">
-                    <img src="fullImage.jpg" alt="Featured Project" class="reveal-image" />
-                </div>
-                <div class="reveal-content">
-                    <span class="section-tag">Featured</span>
-                    <h2 class="section-title">Every Frame<br>Tells a Story</h2>
-                    <p class="reveal-text">Our team combines technical expertise with artistic vision to create content that truly represents your work. From the first foundation pour to the final walkthrough, we're there to capture every milestone.</p>
-                    <a href="#contact" class="btn-primary">
-                        <span>Start Your Project</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
+                            <!-- Image Reveal Section -->
+                        <section class="image-reveal-section">
+                            <div class="reveal-container">
+                                <div class="reveal-image-wrapper">
+                                    <img src="fullImage.jpg" alt="Featured Project" class="reveal-image" />
+                                </div>
+                                <div class="reveal-content">
+                                    <span class="section-tag" data-i18n="reveal.tag">&Agrave; la Une</span>
+                                    <h2 class="section-title" data-i18n="reveal.title">Chaque Image<br>Raconte une Histoire</h2>
+                    <p class="reveal-text" data-i18n="reveal.text">Notre &eacute;quipe combine expertise technique et vision artistique pour cr&eacute;er du contenu qui repr&eacute;sente vraiment votre travail. De la premi&egrave;re fondation &agrave; la visite finale, nous sommes l&agrave; pour capturer chaque &eacute;tape importante.</p>
+                                <a href="#contact" class="btn-primary">
+                                    <span data-i18n="reveal.cta">D&eacute;marrer Votre Projet</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
 
-        <!-- Work/Projects Section with Flip Cards -->
-        <section id="work" class="work-section">
-            <div class="work-header">
-                <span class="section-tag">Our Work</span>
-                <h2 class="section-title split-text">Selected Projects</h2>
-                <p class="work-subtitle">Click on a project to discover more</p>
-            </div>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="project1.jpg" alt="Modern Tower" />
-                                <div class="flip-card-front-content">
-                                    <span class="work-category">Commercial</span>
-                                    <h3 class="work-title">Modern Tower Complex</h3>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <div class="flip-card-back-content">
-                                    <span class="work-category">Commercial</span>
-                                    <h3 class="work-title">Modern Tower Complex</h3>
-                                    <p class="work-desc">Full digital documentation of a 20-story commercial development in downtown Manhattan. Includes drone footage, time-lapse construction, and 3D visualization.</p>
-                                    <div class="work-details">
-                                        <div class="detail-item">
-                                            <span class="detail-label">Duration</span>
-                                            <span class="detail-value">18 months</span>
-                                        </div>
-                                        <div class="detail-item">
-                                            <span class="detail-label">Services</span>
-                                            <span class="detail-value">Video, Drone, 3D</span>
-                                        </div>
-                                    </div>
-                                    <a href="#contact" class="btn-small">View Project</a>
-                                </div>
-                            </div>
+                    <!-- Work/Projects Section with Flip Cards -->
+                    <section id="work" class="work-section">
+                        <div class="work-header">
+                            <span class="section-tag" data-i18n="work.tag">Nos R&eacute;alisations</span>
+                            <h2 class="section-title split-text" data-i18n="work.title">Projets S&eacute;lectionn&eacute;s</h2>
+                            <p class="work-subtitle" data-i18n="work.subtitle">Cliquez sur un projet pour en d&eacute;couvrir plus</p>
                         </div>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="project2.jpg" alt="Luxury Residence" />
-                                <div class="flip-card-front-content">
-                                    <span class="work-category">Residential</span>
-                                    <h3 class="work-title">Luxury Residence</h3>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <div class="flip-card-back-content">
-                                    <span class="work-category">Residential</span>
-                                    <h3 class="work-title">Luxury Residence</h3>
-                                    <p class="work-desc">Cinematic showcase of a custom $4.5M home construction in the Hamptons. Complete with interior design documentation and lifestyle photography.</p>
-                                    <div class="work-details">
-                                        <div class="detail-item">
-                                            <span class="detail-label">Duration</span>
-                                            <span class="detail-value">12 months</span>
+                        <div class="work-gallery">
+                            <div class="work-item">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="project1.jpg" alt="Modern Tower" />
+                                            <div class="flip-card-front-content">
+                                                <span class="work-category" data-i18n="work.p1.cat">Commercial</span>
+                                                <h3 class="work-title" data-i18n="work.p1.title">Complexe Tour Moderne</h3>
+                                            </div>
                                         </div>
-                                        <div class="detail-item">
-                                            <span class="detail-label">Services</span>
-                                            <span class="detail-value">Film, Photo</span>
-                                        </div>
-                                    </div>
-                                    <a href="#contact" class="btn-small">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="project3.jpg" alt="Urban Development" />
-                                <div class="flip-card-front-content">
-                                    <span class="work-category">Mixed-Use</span>
-                                    <h3 class="work-title">Urban Development</h3>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <div class="flip-card-back-content">
-                                    <span class="work-category">Mixed-Use</span>
-                                    <h3 class="work-title">Urban Development</h3>
-                                    <p class="work-desc">Multi-unit residential with ground-floor retail space. Full documentation including virtual tours for pre-sales marketing.</p>
-                                    <div class="work-details">
-                                        <div class="detail-item">
-                                            <span class="detail-label">Duration</span>
-                                            <span class="detail-value">24 months</span>
-                                        </div>
-                                        <div class="detail-item">
-                                            <span class="detail-label">Services</span>
-                                            <span class="detail-value">3D, Virtual Tours</span>
-                                        </div>
-                                    </div>
-                                    <a href="#contact" class="btn-small">View Project</a>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="flip-card-back-content">
+                                                <span class="work-category" data-i18n="work.p1.cat">Commercial</span>
+                                                <h3 class="work-title" data-i18n="work.p1.title">Complexe Tour Moderne</h3>
+                                                <p class="work-desc" data-i18n="work.p1.desc">Documentation num&eacute;rique compl&egrave;te d'un d&eacute;veloppement commercial de 20 &eacute;tages au centre-ville de Montr&eacute;al. Comprend des images par drone, time-lapse de construction et visualisation 3D.</p>
+                                                <div class="work-details">
+                                                    <div class="detail-item">
+                                                        <span class="detail-label" data-i18n="work.duration">Dur&eacute;e</span>
+                                                        <span class="detail-value" data-i18n="work.p1.dur">18 mois</span>
+                                                    </div>
+                                                    <div class="detail-item">
+                                                                                <span class="detail-label" data-i18n="work.services">Services</span>
+                                                                                <span class="detail-value">Vid&eacute;o, Drone, 3D</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="#contact" class="btn-small" data-i18n="work.viewProject">Voir le Projet</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="work-item">
+                                                        <div class="flip-card">
+                                                            <div class="flip-card-inner">
+                                                                <div class="flip-card-front">
+                                                                    <img src="project2.jpg" alt="Luxury Residence" />
+                                                                    <div class="flip-card-front-content">
+                                                                        <span class="work-category" data-i18n="work.p2.cat">R&eacute;sidentiel</span>
+                                                                        <h3 class="work-title" data-i18n="work.p2.title">R&eacute;sidence de Luxe</h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flip-card-back">
+                                                                    <div class="flip-card-back-content">
+                                                                        <span class="work-category" data-i18n="work.p2.cat">R&eacute;sidentiel</span>
+                                                                        <h3 class="work-title" data-i18n="work.p2.title">R&eacute;sidence de Luxe</h3>
+                                                                        <p class="work-desc" data-i18n="work.p2.desc">Pr&eacute;sentation cin&eacute;matographique d'une maison sur mesure de 4,5M$ &agrave; Tremblant. Documentation compl&egrave;te du design int&eacute;rieur et photographie lifestyle.</p>
+                                                                        <div class="work-details">
+                                                                            <div class="detail-item">
+                                                                                <span class="detail-label" data-i18n="work.duration">Dur&eacute;e</span>
+                                                                                <span class="detail-value" data-i18n="work.p2.dur">12 mois</span>
+                                                                            </div>
+                                                                            <div class="detail-item">
+                                                                                <span class="detail-label" data-i18n="work.services">Services</span>
+                                                                                <span class="detail-value">Film, Photo</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="#contact" class="btn-small" data-i18n="work.viewProject">Voir le Projet</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="work-item">
+                                                        <div class="flip-card">
+                                                            <div class="flip-card-inner">
+                                                                <div class="flip-card-front">
+                                                                    <img src="project3.jpg" alt="Urban Development" />
+                                                                    <div class="flip-card-front-content">
+                                                                        <span class="work-category" data-i18n="work.p3.cat">Mixte</span>
+                                                                        <h3 class="work-title" data-i18n="work.p3.title">D&eacute;veloppement Urbain</h3>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flip-card-back">
+                                                                    <div class="flip-card-back-content">
+                                                                        <span class="work-category" data-i18n="work.p3.cat">Mixte</span>
+                                                                        <h3 class="work-title" data-i18n="work.p3.title">D&eacute;veloppement Urbain</h3>
+                                                                        <p class="work-desc" data-i18n="work.p3.desc">R&eacute;sidentiel multi-unit&eacute;s avec commerce au rez-de-chauss&eacute;e. Documentation compl&egrave;te incluant visites virtuelles pour le marketing pr&eacute;-vente.</p>
+                                                                        <div class="work-details">
+                                                                            <div class="detail-item">
+                                                                                <span class="detail-label" data-i18n="work.duration">Dur&eacute;e</span>
+                                                                                <span class="detail-value" data-i18n="work.p3.dur">24 mois</span>
+                                                                            </div>
+                                                                            <div class="detail-item">
+                                                                                <span class="detail-label" data-i18n="work.services">Services</span>
+                                                                                <span class="detail-value">3D, Visites Virtuelles</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="#contact" class="btn-small" data-i18n="work.viewProject">Voir le Projet</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                     </div>
                 </div>
                 <div class="work-item">
@@ -375,48 +386,48 @@
                             <div class="flip-card-front">
                                 <img src="project4.jpg" alt="Contemporary Villa" />
                                 <div class="flip-card-front-content">
-                                    <span class="work-category">Residential</span>
-                                    <h3 class="work-title">Contemporary Villa</h3>
+                                    <span class="work-category" data-i18n="work.p4.cat">R&eacute;sidentiel</span>
+                                    <h3 class="work-title" data-i18n="work.p4.title">Villa Contemporaine</h3>
                                 </div>
                             </div>
                             <div class="flip-card-back">
                                 <div class="flip-card-back-content">
-                                    <span class="work-category">Residential</span>
-                                    <h3 class="work-title">Contemporary Villa</h3>
-                                    <p class="work-desc">Modern architectural masterpiece featuring sustainable design. 3D pre-visualization and complete drone coverage package.</p>
+                                    <span class="work-category" data-i18n="work.p4.cat">R&eacute;sidentiel</span>
+                                    <h3 class="work-title" data-i18n="work.p4.title">Villa Contemporaine</h3>
+                                    <p class="work-desc" data-i18n="work.p4.desc">Chef-d'&oelig;uvre architectural moderne avec design durable. Pr&eacute;-visualisation 3D et couverture drone compl&egrave;te.</p>
                                     <div class="work-details">
                                         <div class="detail-item">
-                                            <span class="detail-label">Duration</span>
-                                            <span class="detail-value">14 months</span>
+                                            <span class="detail-label" data-i18n="work.duration">Dur&eacute;e</span>
+                                            <span class="detail-value" data-i18n="work.p4.dur">14 mois</span>
                                         </div>
                                         <div class="detail-item">
-                                            <span class="detail-label">Services</span>
+                                            <span class="detail-label" data-i18n="work.services">Services</span>
                                             <span class="detail-value">Drone, Photo, 3D</span>
                                         </div>
                                     </div>
-                                    <a href="#contact" class="btn-small">View Project</a>
+                                    <a href="#contact" class="btn-small" data-i18n="work.viewProject">Voir le Projet</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="work-cta">
-                <a href="#contact" class="btn-primary">
-                    <span>Start Your Project</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </section>
+                <div class="work-cta">
+                        <a href="#contact" class="btn-primary">
+                            <span data-i18n="work.cta">D&eacute;marrer Votre Projet</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
 
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="reviews-container">
-                <div class="reviews-header">
-                    <span class="section-tag">Testimonials</span>
-                    <h2 class="section-title">What Our Clients Say</h2>
+                <!-- Reviews Section -->
+                <section class="reviews-section">
+                    <div class="reviews-container">
+                        <div class="reviews-header">
+                            <span class="section-tag" data-i18n="reviews.tag">T&eacute;moignages</span>
+                            <h2 class="section-title" data-i18n="reviews.title">Ce Que Disent Nos Clients</h2>
                 </div>
                 <div class="reviews-track">
                     <div class="review-card">
@@ -553,60 +564,60 @@
                         </section>
 
                         <!-- Contact Section -->
-                            <section id="contact" class="contact-section">
-                                <div class="contact-container">
-                                    <div class="contact-content">
-                                        <span class="section-tag">Get in Touch</span>
-                                        <h2 class="section-title split-text">Let's create something amazing together</h2>
-                                        <p class="contact-subtitle">Ready to bring your construction projects to life through stunning digital content?</p>
-                                        <div class="contact-info">
-                                            <a href="mailto:info@corbodigital.com" class="contact-link">
-                                                <span class="link-label">Email</span>
-                                                <span class="link-value">info@corbodigital.com</span>
-                                            </a>
-                                            <a href="tel:+1234567890" class="contact-link">
-                                                <span class="link-label">Phone</span>
-                                                <span class="link-value">+1 (234) 567-890</span>
-                                            </a>
-                                            <div class="contact-link">
-                                                <span class="link-label">Location</span>
-                                                <span class="link-value">New York, NY</span>
-                                            </div>
-                                        </div>
-                                        <a href="mailto:info@corbodigital.com" class="btn-primary large">
-                                            <span>Start a Project</span>
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                                            </svg>
-                                        </a>
+                                                <section id="contact" class="contact-section">
+                                                    <div class="contact-container">
+                                                        <div class="contact-content">
+                                                            <span class="section-tag" data-i18n="contact.tag">Nous Contacter</span>
+                                                            <h2 class="section-title split-text" data-i18n="contact.title">Cr&eacute;ons quelque chose d'incroyable ensemble</h2>
+                                                            <p class="contact-subtitle" data-i18n="contact.subtitle">Pr&ecirc;t &agrave; donner vie &agrave; vos projets de construction gr&acirc;ce &agrave; du contenu num&eacute;rique &eacute;poustouflant?</p>
+                                                            <div class="contact-info">
+                                                                <a href="mailto:info@corbodigital.com" class="contact-link">
+                                                                    <span class="link-label" data-i18n="contact.email">Courriel</span>
+                                                                    <span class="link-value">info@corbodigital.com</span>
+                                                                </a>
+                                                                <a href="tel:+1234567890" class="contact-link">
+                                                                    <span class="link-label" data-i18n="contact.phone">T&eacute;l&eacute;phone</span>
+                                                                    <span class="link-value">+1 (234) 567-890</span>
+                                                                </a>
+                                                                <div class="contact-link">
+                                                                    <span class="link-label" data-i18n="contact.location">Emplacement</span>
+                                                                    <span class="link-value" data-i18n="contact.city">Montr&eacute;al, QC</span>
+                                                                </div>
+                                                            </div>
+                                                            <a href="mailto:info@corbodigital.com" class="btn-primary large">
+                                                                <span data-i18n="contact.cta">D&eacute;marrer un Projet</span>
+                                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                        <div class="contact-visual">
+                                                            <canvas id="contact-canvas"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </main>
+
+                        <!-- Footer -->
+                        <footer class="footer">
+                            <div class="footer-container">
+                                <div class="footer-top">
+                                    <div class="footer-brand">
+                                        <img src="Corbo_Digital-1.png" alt="Corbo Digital" class="footer-logo-img" />
                                     </div>
-                                    <div class="contact-visual">
-                                        <canvas id="contact-canvas"></canvas>
+                                    <div class="footer-links">
+                                        <a href="#home" data-i18n="nav.home">Accueil</a>
+                                        <a href="#about" data-i18n="nav.about">&Agrave; propos</a>
+                                        <a href="#services" data-i18n="nav.services">Services</a>
+                                        <a href="#work" data-i18n="nav.work">R&eacute;alisations</a>
+                                        <a href="#contact" data-i18n="nav.contact">Contact</a>
                                     </div>
                                 </div>
-                            </section>
-                        </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <img src="Corbo_Digital-1.png" alt="Corbo Digital" class="footer-logo-img" />
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#work">Work</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">© 2025 Corbo Digital — All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <div class="footer-bottom">
+                                <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Corbo Digital &mdash; Tous droits r&eacute;serv&eacute;s.</p>
+                                    <div class="social-links">
+                                        <a href="#" aria-label="Instagram">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="2" width="20" height="20" rx="5"/>
                             <circle cx="12" cy="12" r="4"/>
                             <circle cx="18" cy="6" r="1"/>
