@@ -678,69 +678,67 @@ document.addEventListener('visibilitychange', () => {
 // LANGUAGE SWITCHING (FR/EN)
 // ============================================
 const translations = {
-    fr: {
-        // Navigation
-        'nav.home': 'Accueil',
-        'nav.about': '\u00C0 propos',
-        'nav.services': 'Services',
-        'nav.work': 'R\u00E9alisations',
-        'nav.contact': 'Contact',
+fr: {
+    // Navigation
+    'nav.home': 'Accueil',
+    'nav.about': '\u00C0 propos',
+    'nav.services': 'Services',
+    'nav.work': 'R\u00E9alisations',
+    'nav.contact': 'Contact',
         
-        // Hero
-        'hero.tag': 'Studio de Production Num\u00E9rique',
-        'hero.title1': 'Nous Cr\u00E9ons',
-        'hero.title2': 'des Exp\u00E9riences',
-        'hero.title3': 'Num\u00E9riques',
-        'hero.subtitle': 'L\u00E0 o\u00F9 la construction rencontre l\'innovation num\u00E9rique. Nous transformons vos visions en r\u00E9alit\u00E9s visuelles \u00E9poustouflantes.',
-        'hero.cta1': 'Voir Nos R\u00E9alisations',
-        'hero.cta2': 'Nous Contacter',
-        'hero.scroll': 'D\u00E9filer',
+    // Hero
+    'hero.tag': 'Agence de Marketing Num\u00E9rique',
+    'hero.title1': 'Contenu',
+    'hero.title2': 'Authentique.',
+    'hero.title3': 'R\u00E9sultats Concrets.',
+    'hero.subtitle': 'Nous aidons les entreprises \u00E0 b\u00E2tir une pr\u00E9sence en ligne forte, coh\u00E9rente et performante gr\u00E2ce \u00E0 du contenu strat\u00E9gique.',
+    'hero.cta1': 'Nos Services',
+    'hero.cta2': 'Nous Contacter',
+    'hero.scroll': 'D\u00E9filer',
         
-        // Impact
-        'impact.line1': 'Cr\u00E9er',
-        'impact.line2': 'des Histoires',
-        'impact.line3a': '\u00C0 Travers',
-        'impact.line3b': 'la Construction',
-        'impact.line4a': 'les M\u00E9dias',
-        'impact.line4b': 'Num\u00E9riques',
+    // Impact
+    'impact.line1': 'Strat\u00E9gie.',
+    'impact.line2': 'Cr\u00E9ativit\u00E9.',
+    'impact.line3b': 'R\u00E9sultats.',
         
-        // About
-        'about.tag': '\u00C0 Propos',
-        'about.title': 'Qui Sommes-Nous',
-        'about.text1': 'Nous sommes un studio cr\u00E9atif qui fait le pont entre la construction physique et la narration num\u00E9rique.',
-        'about.text2': 'Des maisons individuelles aux d\u00E9veloppements multi-unit\u00E9s, nous collaborons avec les constructeurs et promoteurs pour mettre en valeur leurs projets avec des visuels modernes et cin\u00E9matographiques. Chaque image que nous capturons raconte l\'histoire du savoir-faire, du d\u00E9vouement et de l\'innovation.',
-        'about.stat1': 'Ann\u00E9es d\'Exp\u00E9rience',
-        'about.stat2': 'Projets R\u00E9alis\u00E9s',
-        'about.stat3': 'Clients Satisfaits',
+    // About
+    'about.tag': '\u00C0 Propos',
+    'about.title': 'Qui Sommes-Nous',
+    'about.text1': 'Corbo Digital est une agence de marketing num\u00E9rique sp\u00E9cialis\u00E9e en cr\u00E9ation de contenu.',
+    'about.text2': 'Nous offrons des services complets, de la cr\u00E9ation de sites web \u00E0 la gestion des m\u00E9dias sociaux, afin d\'aider les entreprises \u00E0 b\u00E2tir une pr\u00E9sence en ligne forte, coh\u00E9rente et performante. Notre approche est ax\u00E9e sur du contenu authentique, strat\u00E9gique et orient\u00E9e sur les r\u00E9sultats.',
+    'about.stat1': 'Clients Accompagn\u00E9s',
+    'about.stat2': 'Projets R\u00E9alis\u00E9s',
+    'about.stat3': 'Engagement',
         
-        // Services
-        'services.tag': 'Ce Que Nous Faisons',
-        'services.title': 'Des services qui transforment votre vision',
-        'services.s1.title': 'Production Num\u00E9rique',
-        'services.s1.desc': 'Production vid\u00E9o de haute qualit\u00E9 mettant en valeur les projets de construction du concept \u00E0 la r\u00E9alisation.',
-        'services.s1.f1': 'Films de Projets Cin\u00E9matographiques',
-        'services.s1.f2': 'Couverture A\u00E9rienne par Drone',
-        'services.s1.f3': 'Documentation Time-lapse',
-        'services.s2.title': 'Visualisation 3D',
-        'services.s2.desc': 'Rendus 3D photor\u00E9alistes et visites virtuelles donnant vie aux plans architecturaux.',
-        'services.s2.f1': 'Rendus Architecturaux',
-        'services.s2.f2': 'Visites Virtuelles',
-        'services.s2.f3': 'Exp\u00E9riences Interactives',
-        'services.s3.title': 'Web & Digital',
-        'services.s3.desc': 'Sites web personnalis\u00E9s et plateformes num\u00E9riques con\u00E7us pour mettre en valeur votre portfolio.',
-        'services.s3.f1': 'Sites Portfolio',
-        'services.s3.f2': 'Galeries Interactives',
-        'services.s3.f3': 'Marketing Digital',
-        'services.s4.title': 'Photographie',
-        'services.s4.desc': 'Photographie professionnelle capturant chaque d\u00E9tail de vos projets de construction.',
-        'services.s4.f1': 'Photographie Architecturale',
-        'services.s4.f2': 'Documentation de Progression',
-        'services.s4.f3': 'Photographie A\u00E9rienne',
+    // Services
+    'services.tag': 'Ce Que Nous Faisons',
+    'services.title': 'Des services qui transforment votre vision',
+    'services.s1.title': 'Pr\u00E9sence',
+    'services.s1.desc': '\u00CAtre visible au bon endroit, au bon moment.',
+        'services.s1.f1': 'Cr\u00E9ation de sites web orient\u00E9s vers les conversions',
+        'services.s1.f2': 'Optimisation SEO locale (Google & Maps)',
+        'services.s1.f3': 'Cr\u00E9ation et gestion de profils Google Business',
+        'services.s1.f4': 'Cr\u00E9ation de contenu',
+        'services.s1.f5': 'Pr\u00E9sence coh\u00E9rente sur les r\u00E9seaux sociaux',
+        'services.s2.title': 'Positionnement',
+        'services.s2.desc': 'Une base solide avant d\'investir en publicit\u00E9.',
+        'services.s2.f1': 'Positionnement clair et cr\u00E9dible pour entrepreneurs',
+        'services.s2.f2': 'Image de marque adapt\u00E9e au secteur',
+        'services.s2.f3': 'Messages simples qui inspirent confiance',
+        'services.s2.f4': 'Structure marketing pens\u00E9e pour convertir',
+        'services.s2.f5': 'Optimisation pour le march\u00E9 local',
+        'services.s3.title': 'Croissance',
+        'services.s3.desc': 'Plus de demandes, sans surcharger l\'op\u00E9rationnel.',
+        'services.s3.f1': 'G\u00E9n\u00E9ration de leads qualifi\u00E9s',
+        'services.s3.f2': 'Campagnes publicitaires cibl\u00E9es (Meta, TikTok & Google)',
+        'services.s3.f3': 'Suivi des performances et optimisation continue',
+        'services.s3.f4': 'Automatisation des demandes entrantes',
+        'services.s3.f5': 'Strat\u00E9gies d\'embauche adapt\u00E9es',
         
         // Reveal Section
-        'reveal.tag': '\u00C0 la Une',
-        'reveal.title': 'Chaque Image<br>Raconte une Histoire',
-        'reveal.text': 'Notre \u00E9quipe combine expertise technique et vision artistique pour cr\u00E9er du contenu qui repr\u00E9sente vraiment votre travail. De la premi\u00E8re fondation \u00E0 la visite finale, nous sommes l\u00E0 pour capturer chaque \u00E9tape importante.',
+        'reveal.tag': 'Notre Approche',
+        'reveal.title': 'Contenu Authentique.<br>R\u00E9sultats Mesurables.',
+        'reveal.text': 'Notre \u00E9quipe combine strat\u00E9gie marketing et cr\u00E9ativit\u00E9 pour cr\u00E9er du contenu qui repr\u00E9sente vraiment votre entreprise. De la premi\u00E8re id\u00E9e \u00E0 la conversion, nous sommes l\u00E0 pour maximiser votre pr\u00E9sence en ligne.',
         'reveal.cta': 'D\u00E9marrer Votre Projet',
         
         // Work Section
@@ -794,60 +792,59 @@ const translations = {
         'nav.contact': 'Contact',
         
         // Hero
-        'hero.tag': 'Digital Production Studio',
-        'hero.title1': 'We Build',
-        'hero.title2': 'Digital',
-        'hero.title3': 'Experiences',
-        'hero.subtitle': 'Where construction meets digital innovation. We transform visions into stunning visual realities.',
-        'hero.cta1': 'View Our Work',
+        'hero.tag': 'Digital Marketing Agency',
+        'hero.title1': 'Authentic',
+        'hero.title2': 'Content.',
+        'hero.title3': 'Real Results.',
+        'hero.subtitle': 'We help businesses build a strong, consistent and high-performing online presence through strategic content.',
+        'hero.cta1': 'Our Services',
         'hero.cta2': 'Get in Touch',
         'hero.scroll': 'Scroll',
         
         // Impact
-        'impact.line1': 'Crafting',
-        'impact.line2': 'Stories',
-        'impact.line3a': 'Through',
-        'impact.line3b': 'Construction',
-        'impact.line4a': 'Digital',
-        'impact.line4b': 'Media',
+        'impact.line1': 'Strategy.',
+        'impact.line2': 'Creativity.',
+        'impact.line3b': 'Results.',
         
         // About
         'about.tag': 'About Us',
         'about.title': 'Who We Are',
-        'about.text1': 'We are a creative studio that bridges the gap between physical construction and digital storytelling.',
-        'about.text2': 'From ground-up homes to multi-unit developments, we collaborate with builders and developers to showcase their projects with modern, cinematic visuals. Every frame we capture tells the story of craftsmanship, dedication, and innovation.',
-        'about.stat1': 'Years Experience',
+        'about.text1': 'Corbo Digital is a digital marketing agency specializing in content creation.',
+        'about.text2': 'We offer comprehensive services, from website creation to social media management, to help businesses build a strong, consistent and high-performing online presence. Our approach focuses on authentic, strategic and results-oriented content.',
+        'about.stat1': 'Clients Served',
         'about.stat2': 'Projects Completed',
-        'about.stat3': 'Client Satisfaction',
+        'about.stat3': 'Engagement',
         
         // Services
         'services.tag': 'What We Do',
         'services.title': 'Services that transform your vision',
-        'services.s1.title': 'Digital Production',
-        'services.s1.desc': 'High-quality video production showcasing construction projects from concept to completion.',
-        'services.s1.f1': 'Cinematic Project Films',
-        'services.s1.f2': 'Drone Aerial Coverage',
-        'services.s1.f3': 'Time-lapse Documentation',
-        'services.s2.title': '3D Visualization',
-        'services.s2.desc': 'Photorealistic 3D renders and virtual tours bringing architectural plans to life.',
-        'services.s2.f1': 'Architectural Renders',
-        'services.s2.f2': 'Virtual Walkthroughs',
-        'services.s2.f3': 'Interactive Experiences',
-        'services.s3.title': 'Web & Digital',
-        'services.s3.desc': 'Custom websites and digital platforms designed to showcase your portfolio.',
-        'services.s3.f1': 'Portfolio Websites',
-        'services.s3.f2': 'Interactive Galleries',
-        'services.s3.f3': 'Digital Marketing',
-        'services.s4.title': 'Photography',
-        'services.s4.desc': 'Professional photography capturing every detail of your construction projects.',
-        'services.s4.f1': 'Architectural Photography',
-        'services.s4.f2': 'Progress Documentation',
-        'services.s4.f3': 'Aerial Photography',
+        'services.s1.title': 'Presence',
+        'services.s1.desc': 'Be visible in the right place, at the right time.',
+        'services.s1.f1': 'Conversion-focused website creation',
+        'services.s1.f2': 'Local SEO optimization (Google & Maps)',
+        'services.s1.f3': 'Google Business profile creation & management',
+        'services.s1.f4': 'Content creation',
+        'services.s1.f5': 'Consistent social media presence',
+        'services.s2.title': 'Positioning',
+        'services.s2.desc': 'A solid foundation before investing in advertising.',
+        'services.s2.f1': 'Clear and credible positioning for entrepreneurs',
+        'services.s2.f2': 'Brand image adapted to the sector',
+        'services.s2.f3': 'Simple messages that inspire trust',
+        'services.s2.f4': 'Marketing structure designed to convert',
+        'services.s2.f5': 'Optimization for the local market',
+        'services.s3.title': 'Growth',
+        'services.s3.desc': 'More leads, without overloading operations.',
+        'services.s3.f1': 'Qualified lead generation',
+        'services.s3.f2': 'Targeted advertising campaigns (Meta, TikTok & Google)',
+        'services.s3.f3': 'Performance tracking and continuous optimization',
+        'services.s3.f4': 'Automation of incoming requests',
+        'services.s3.f5': 'Adapted hiring strategies',
         
         // Reveal Section
         'reveal.tag': 'Featured',
-        'reveal.title': 'Every Frame<br>Tells a Story',
-        'reveal.text': 'Our team combines technical expertise with artistic vision to create content that truly represents your work. From the first foundation pour to the final walkthrough, we\'re there to capture every milestone.',
+        'reveal.tag': 'Our Approach',
+        'reveal.title': 'Authentic Content.<br>Measurable Results.',
+        'reveal.text': 'Our team combines marketing strategy and creativity to create content that truly represents your business. From the first idea to conversion, we\'re here to maximize your online presence.',
         'reveal.cta': 'Start Your Project',
         
         // Work Section
@@ -911,8 +908,8 @@ function setLanguage(lang) {
     
     // Update page title
     document.title = lang === 'fr' 
-        ? 'Corbo Digital | La Construction Rencontre l\'Innovation'
-        : 'Corbo Digital | Construction Meets Innovation';
+        ? 'Corbo Digital | Agence de Marketing Num\u00E9rique'
+        : 'Corbo Digital | Digital Marketing Agency';
     
     // Update all translatable elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
