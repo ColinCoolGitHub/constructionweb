@@ -228,7 +228,6 @@ function initHeroAnimations() {
 const impactSection = document.querySelector('.impact-section');
 const impactPanel = document.querySelector('.impact-panel');
 const impactWords = document.querySelectorAll('.impact-word');
-const impactOutlineWords = document.querySelectorAll('.impact-word.outline');
 const impactScrollHint = document.querySelector('.impact-scroll-hint');
 
 if (impactSection && impactPanel && impactWords.length) {
