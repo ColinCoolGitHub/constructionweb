@@ -232,7 +232,10 @@ const impactOutlineWords = document.querySelectorAll('.impact-word.outline');
 const impactScrollHint = document.querySelector('.impact-scroll-hint');
 
 if (impactSection && impactPanel && impactWords.length) {
-    // Initial animation when section comes into view
+    // Get wipe reveal element
+    const wipeReveal = document.querySelector('.wipe-reveal');
+
+    // Always make impact words visible with animation
     const impactTl = gsap.timeline({
         scrollTrigger: {
             trigger: impactSection,
@@ -254,6 +257,7 @@ if (impactSection && impactPanel && impactWords.length) {
         ease: 'power2.out'
     }, '-=0.5');
 
+    // Apply wipe animation on all screen sizes
     // Slide left to right and fade out animation - panel moves left to reveal About section
     gsap.to(impactPanel, {
         x: '-100%',
@@ -270,7 +274,6 @@ if (impactSection && impactPanel && impactWords.length) {
     });
 
     // About section slides in from right while impact slides left
-    const wipeReveal = document.querySelector('.wipe-reveal');
     if (wipeReveal) {
         gsap.to(wipeReveal, {
             x: 0,
@@ -490,6 +493,41 @@ if (reviewsSection && reviewsTrack && reviewCards.length > 0) {
     let currentIndex = 0;
     let animTimeout = null;
 
+    // Create navigation dots
+    const dotsContainer = document.querySelector('.reviews-dots');
+    if (dotsContainer) {
+        reviewCards.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'reviews-dot' + (index === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to review ${index + 1}`);
+            dot.addEventListener('click', () => goToReview(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    // Update dots
+    const updateDots = () => {
+        const dots = document.querySelectorAll('.reviews-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    };
+
+    // Go to specific review
+    const goToReview = (index) => {
+        if (index === currentIndex) return;
+        const direction = index > currentIndex ? 'next' : 'prev';
+        currentIndex = index;
+        reviewsTrack.classList.remove('carousel-anim-left', 'carousel-anim-right');
+        reviewsTrack.classList.add(direction === 'next' ? 'carousel-anim-right' : 'carousel-anim-left');
+        updateCarousel();
+        updateDots();
+        clearTimeout(animTimeout);
+        animTimeout = setTimeout(() => {
+            reviewsTrack.classList.remove('carousel-anim-left', 'carousel-anim-right');
+        }, 700);
+    };
+
     // Rotate to specific review with direction class
     const rotateCarousel = (direction) => {
         // Remove any previous direction class
@@ -502,6 +540,7 @@ if (reviewsSection && reviewsTrack && reviewCards.length > 0) {
             currentIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
         }
         updateCarousel();
+        updateDots();
         // Remove the direction class after animation duration
         clearTimeout(animTimeout);
         animTimeout = setTimeout(() => {
@@ -547,6 +586,35 @@ if (reviewsSection && reviewsTrack && reviewCards.length > 0) {
 
     // Initial setup
     updateCarousel();
+
+    // Navigation buttons for mobile
+    const prevBtn = document.querySelector('.reviews-prev');
+    const nextBtn = document.querySelector('.reviews-next');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => rotateCarousel('prev'));
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => rotateCarousel('next'));
+    }
+
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    reviewsTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    reviewsTrack.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) {
+            rotateCarousel('next');
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            rotateCarousel('prev');
+        }
+    }, { passive: true });
 }
 
 // Contact section animations
@@ -602,7 +670,7 @@ const revealImageWrapper = document.querySelector('.reveal-image-wrapper');
 const revealContent = document.querySelector('.reveal-content');
 
 if (revealSection && revealImage && revealContent && revealImageWrapper) {
-    // Create timeline for the reveal animation
+    // Create timeline for the reveal animation on all devices
     const revealTl = gsap.timeline({
         scrollTrigger: {
             trigger: revealSection,
