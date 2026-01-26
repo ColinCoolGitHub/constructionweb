@@ -234,6 +234,9 @@ const impactScrollHint = document.querySelector('.impact-scroll-hint');
 if (impactSection && impactPanel && impactWords.length) {
     // Get wipe reveal element
     const wipeReveal = document.querySelector('.wipe-reveal');
+    
+    // Check if mobile
+    const isMobile = window.innerWidth <= 768;
 
     // Always make impact words visible with animation
     const impactTl = gsap.timeline({
@@ -257,35 +260,43 @@ if (impactSection && impactPanel && impactWords.length) {
         ease: 'power2.out'
     }, '-=0.5');
 
-    // Apply wipe animation on all screen sizes
-    // Slide left to right and fade out animation - panel moves left to reveal About section
-    gsap.to(impactPanel, {
-        x: '-100%',
-        ease: 'power2.inOut',
-        scrollTrigger: {
-            trigger: impactSection,
-            start: 'top top',
-            end: '+=200%',
-            scrub: 1,
-            pin: true,
-            pinSpacing: true,
-            markers: false
-        }
-    });
-
-    // About section slides in from right while impact slides left
-    if (wipeReveal) {
-        gsap.to(wipeReveal, {
-            x: 0,
-            opacity: 1,
+    // Only apply wipe animation on desktop (not mobile)
+    if (!isMobile) {
+        // Slide left to right and fade out animation - panel moves left to reveal About section
+        gsap.to(impactPanel, {
+            x: '-100%',
             ease: 'power2.inOut',
             scrollTrigger: {
                 trigger: impactSection,
                 start: 'top top',
                 end: '+=200%',
-                scrub: 1
+                scrub: 1,
+                pin: true,
+                pinSpacing: true,
+                markers: false
             }
         });
+
+        // About section slides in from right while impact slides left
+        if (wipeReveal) {
+            gsap.to(wipeReveal, {
+                x: 0,
+                opacity: 1,
+                ease: 'power2.inOut',
+                scrollTrigger: {
+                    trigger: impactSection,
+                    start: 'top top',
+                    end: '+=200%',
+                    scrub: 1
+                }
+            });
+        }
+    } else {
+        // On mobile, make sure impact words and about section are visible without animation
+        gsap.set(impactWords, { opacity: 1, y: 0 });
+        if (wipeReveal) {
+            gsap.set(wipeReveal, { x: 0, opacity: 1 });
+        }
     }
 }
 
