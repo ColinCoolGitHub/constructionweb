@@ -1,0 +1,23 @@
+# Robots.txt for Corbo Digital
+# https://corbodigital.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://corbodigital.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
+
+# Disallow temporary/system files
+Disallow: /*.md$
+Disallow: /*.txt$
+Disallow: /node_modules/
+
+# Allow important resources
+Allow: /app.css
+Allow: /app.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.mp4
