@@ -13,15 +13,10 @@ const lenis = new Lenis({
     touchMultiplier: 2,
 });
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-
 // GSAP ScrollTrigger integration with Lenis
 gsap.registerPlugin(ScrollTrigger);
 
+// Single animation loop - use GSAP ticker only (removes duplicate RAF loop)
 lenis.on('scroll', ScrollTrigger.update);
 
 gsap.ticker.add((time) => {
@@ -37,6 +32,53 @@ const loader = document.querySelector('.loader');
 const loaderText = document.querySelectorAll('.loader-text span');
 const loaderProgress = document.querySelector('.loader-progress');
 const loaderLogo = document.querySelector('.loader-logo img');
+
+// ============================================
+// IMAGE PRELOADER - Load all images during loader
+// ============================================
+const imagesToPreload = [
+    'project1.jpg',
+    'project2.jpg', 
+    'project3.jpg',
+    'project4.jpg',
+    'fullImage.jpg'
+];
+
+function preloadImages(imageUrls) {
+    return new Promise((resolve) => {
+        let loaded = 0;
+        const total = imageUrls.length;
+        
+        if (total === 0) {
+            resolve();
+            return;
+        }
+
+        imageUrls.forEach(url => {
+            const img = new Image();
+            
+            img.onload = img.onerror = () => {
+                loaded++;
+                const progress = (loaded / total) * 100;
+                
+                // Update progress bar based on actual loading
+                if (loaderProgress) {
+                    gsap.to(loaderProgress, {
+                        width: `${progress}%`,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                }
+                
+                if (loaded === total) {
+                    resolve();
+                }
+            };
+            
+            img.src = url;
+        });
+    });
+}
 
 if (loader && loaderText.length && loaderProgress) {
     const tl = gsap.timeline();
@@ -58,23 +100,34 @@ if (loader && loaderText.length && loaderProgress) {
         duration: 0.8,
         stagger: 0.1,
         ease: 'power3.out'
-    }, '-=0.4')
-    // Progress bar fills
-    .to(loaderProgress, {
-        width: '100%',
-        duration: 1.5,
-        ease: 'power2.inOut'
-    }, '-=0.3')
-    // Slide loader up
-    .to(loader, {
-        yPercent: -100,
-        duration: 0.8,
-        ease: 'power3.inOut',
-        delay: 0.3,
-        onComplete: () => {
-            loader.style.display = 'none';
-            initHeroAnimations();
-        }
+    }, '-=0.4');
+
+    // Start preloading images immediately
+    const preloadPromise = preloadImages(imagesToPreload);
+    
+    // Wait for both: minimum animation time AND all images loaded
+    const minLoadTime = new Promise(resolve => setTimeout(resolve, 1500));
+    
+    Promise.all([preloadPromise, minLoadTime]).then(() => {
+        // Ensure progress bar is at 100%
+        gsap.to(loaderProgress, {
+            width: '100%',
+            duration: 0.3,
+            ease: 'power2.out',
+            onComplete: () => {
+                // Slide loader up after images are cached
+                gsap.to(loader, {
+                    yPercent: -100,
+                    duration: 0.8,
+                    ease: 'power3.inOut',
+                    delay: 0.2,
+                    onComplete: () => {
+                        loader.style.display = 'none';
+                        initHeroAnimations();
+                    }
+                });
+            }
+        });
     });
 }
 
@@ -143,17 +196,29 @@ function initThreeJS() {
         scene.add(shape);
     }
 
+
     camera.position.z = 3;
 
     let mouseX = 0, mouseY = 0;
+    let animationId = null;
+    let isCanvasVisible = false;
 
+    // Throttled mousemove handler - only update every 16ms (~60fps)
+    let lastMouseUpdate = 0;
     document.addEventListener('mousemove', (e) => {
+        const now = performance.now();
+        if (now - lastMouseUpdate < 16) return;
+        lastMouseUpdate = now;
         mouseX = (e.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-    });
+    }, { passive: true });
 
     function animate() {
-        requestAnimationFrame(animate);
+        if (!isCanvasVisible) {
+            animationId = null;
+            return;
+        }
+        animationId = requestAnimationFrame(animate);
 
         particlesMesh.rotation.y += 0.0008;
         particlesMesh.rotation.x += 0.0003;
@@ -170,7 +235,18 @@ function initThreeJS() {
 
         renderer.render(scene, camera);
     }
-    animate();
+
+    // Use IntersectionObserver to only animate when canvas is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            isCanvasVisible = entry.isIntersecting;
+            if (isCanvasVisible && !animationId) {
+                animate();
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(canvas);
 
     window.addEventListener('resize', () => {
         camera.aspect = container.offsetWidth / container.offsetHeight;
@@ -427,43 +503,48 @@ ScrollTrigger.create({
     }
 });
 
-// Service cards animation
+// Service cards animation - use batch for better performance
 const serviceCards = document.querySelectorAll('.service-card');
+const servicesGrid = document.querySelector('.services-grid');
 
-serviceCards.forEach((card, i) => {
-    gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay: i * 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        }
+if (servicesGrid && serviceCards.length) {
+    ScrollTrigger.batch(serviceCards, {
+        start: 'top 85%',
+        onEnter: (batch) => {
+            gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+        },
+        once: true
     });
-});
+}
 
-// Work items animation
+// Work items animation - use single ScrollTrigger with batch for better performance
 const workItems = document.querySelectorAll('.work-item');
 const workSubtitle = document.querySelector('.work-subtitle');
 const workCta = document.querySelector('.work-cta');
+const workGallery = document.querySelector('.work-gallery');
 
-workItems.forEach((item, i) => {
-    gsap.to(item, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay: i * 0.15,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        }
+// Single ScrollTrigger for all work items instead of one per item
+if (workGallery && workItems.length) {
+    ScrollTrigger.batch(workItems, {
+        start: 'top 85%',
+        onEnter: (batch) => {
+            gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: 'power2.out'
+            });
+        },
+        once: true // Only animate once, don't reverse
     });
-});
+}
 
 if (workSubtitle) {
     gsap.to(workSubtitle, {
@@ -681,6 +762,7 @@ const revealContent = document.querySelector('.reveal-content');
 
 if (revealSection && revealImage && revealContent && revealImageWrapper) {
     // Create timeline for the reveal animation on all devices
+    // Use clip-path instead of width for GPU-accelerated animation
     const revealTl = gsap.timeline({
         scrollTrigger: {
             trigger: revealSection,
@@ -694,8 +776,8 @@ if (revealSection && revealImage && revealContent && revealImageWrapper) {
 
     revealTl
         .fromTo(revealImageWrapper, 
-            { width: '100%' },
-            { width: '50%', duration: 1, ease: 'power2.inOut' }
+            { clipPath: 'inset(0 0 0 0)' },
+            { clipPath: 'inset(0 50% 0 0)', duration: 1, ease: 'power2.inOut' }
         )
         .fromTo(revealImage,
             { scale: 1.1 },
@@ -712,18 +794,9 @@ if (revealSection && revealImage && revealContent && revealImageWrapper) {
 // ============================================
 // PARALLAX EFFECTS
 // ============================================
-gsap.utils.toArray('.flip-card-front img').forEach(img => {
-    gsap.to(img, {
-        yPercent: -10,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: img,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
-});
+// Note: Parallax on flip card images removed for performance.
+// The perspective + preserve-3d on flip cards conflicts with
+// scroll-driven parallax, causing severe lag.
 
 // ============================================
 // SMOOTH SCROLL TO ANCHORS
