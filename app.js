@@ -41,6 +41,7 @@ const imagesToPreload = [
     'project2.jpg', 
     'project3.jpg',
     'project4.jpg',
+    'pictureGreat.jpg',
     'fullImage.jpg'
 ];
 
@@ -916,6 +917,14 @@ fr: {
         'work.p4.title': 'Villa Contemporaine',
         'work.p4.desc': 'Chef-d\'\u0153uvre architectural moderne avec design durable. Pr\u00E9-visualisation 3D et couverture drone compl\u00E8te.',
         'work.p4.dur': '14 mois',
+        'work.p5.cat': 'Drone',
+        'work.p5.title': 'Prise de Vue Drone',
+        'work.p5.desc': 'S\u00E9ance de prise de vue par drone avec lunettes FPV pour un client. Capture a\u00E9rienne immersive offrant des perspectives uniques et cin\u00E9matographiques.',
+        
+        // G3 Constructions Section
+        'g3.tag': 'Client Vedette',
+        'g3.title': 'G3 Constructions',
+        'g3.subtitle': 'Projets r\u00E9alis\u00E9s pour G3 Constructions',
         
         // Reviews
         'reviews.tag': 'T\u00E9moignages',
@@ -1022,6 +1031,14 @@ fr: {
         'work.p4.title': 'Contemporary Villa',
         'work.p4.desc': 'Modern architectural masterpiece featuring sustainable design. 3D pre-visualization and complete drone coverage package.',
         'work.p4.dur': '14 months',
+        'work.p5.cat': 'Drone',
+        'work.p5.title': 'Drone Photography',
+        'work.p5.desc': 'FPV drone photography session with drone goggles for a client. Immersive aerial capture providing unique and cinematic perspectives.',
+        
+        // G3 Constructions Section
+        'g3.tag': 'Featured Client',
+        'g3.title': 'G3 Constructions',
+        'g3.subtitle': 'Projects completed for G3 Constructions',
         
         // Reviews
         'reviews.tag': 'Testimonials',
