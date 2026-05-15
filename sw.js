@@ -1,14 +1,11 @@
 // Service Worker for Corbo Digital - Image Caching
-const CACHE_NAME = 'corbo-digital-v1';
+const CACHE_NAME = 'corbo-digital-v2';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
     '/app.css',
     '/app.js',
-    '/project1.jpg',
-    '/project2.jpg',
-    '/project3.jpg',
-    '/project4.jpg',
+    '/innerImage.jpg',
     '/fullImage.jpg',
     '/Corbo_Digital-1.png'
 ];

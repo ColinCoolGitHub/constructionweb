@@ -10,7 +10,7 @@
 - **Canonical URL**: Prevents duplicate content issues
 - **Language alternates**: French/English support with hreflang
 
-### 2. Open Graph Tags (Facebook, LinkedIn)
+### 2. Open Graph Tags
 - og:title, og:description, og:image
 - og:locale for French Canadian
 - og:site_name for brand recognition
@@ -45,11 +45,9 @@ Create an image called `og-image.jpg` (1200x630 pixels) with:
 - Brand colors (blue #103877, gold #D2A517)
 
 ### 2. Update Social Media Links
-In `index.html`, replace `#` with actual social media URLs:
+In `index.html`, keep only the Instagram URL in the footer:
 ```html
-<a href="https://www.instagram.com/corbodigital" aria-label="Instagram">
-<a href="https://www.linkedin.com/company/corbodigital" aria-label="LinkedIn">
-<a href="https://www.youtube.com/@corbodigital" aria-label="YouTube">
+<a href="https://www.instagram.com/corbodigital/" aria-label="Instagram">
 ```
 
 ### 3. Add Google Analytics
@@ -108,7 +106,7 @@ Replace `corbodigital.com` with your actual domain throughout:
 ### Local SEO
 - Ensure NAP (Name, Address, Phone) is consistent everywhere
 - Add location-specific landing pages if serving multiple cities
-- Get reviews on Google, Facebook, Yelp
+- Get reviews on Google
 
 ### Page Speed
 - Compress images (use WebP format)
@@ -123,7 +121,7 @@ Replace `corbodigital.com` with your actual domain throughout:
 Use these to verify SEO implementation:
 
 1. **Google Rich Results Test**: https://search.google.com/test/rich-results
-2. **Facebook Sharing Debugger**: https://developers.facebook.com/tools/debug/
+2. **Social sharing preview tool**
 3. **Twitter Card Validator**: https://cards-dev.twitter.com/validator
 4. **Schema Validator**: https://validator.schema.org/
 5. **PageSpeed Insights**: https://pagespeed.web.dev/
@@ -141,7 +139,7 @@ Use these to verify SEO implementation:
 - [ ] Add phone number to structured data
 - [ ] Create Google Business Profile
 - [ ] Verify all structured data with testing tools
-- [ ] Test Open Graph with Facebook debugger
+- [ ] Test Open Graph with a social sharing debugger
 - [ ] Run PageSpeed test and optimize
 - [ ] Set up monthly ranking monitoring
 
@@ -150,21 +148,21 @@ Use these to verify SEO implementation:
 ## ?? Keywords to Target
 
 **Primary Keywords:**
-- Agence marketing numérique Montréal
-- Marketing digital Québec
-- Création de contenu entreprise
-- Gestion médias sociaux Montréal
+- Agence marketing numï¿½rique Montrï¿½al
+- Marketing digital Quï¿½bec
+- Crï¿½ation de contenu entreprise
+- Gestion mï¿½dias sociaux Montrï¿½al
 
 **Secondary Keywords:**
-- Publicité Facebook Québec
-- Publicité Instagram entreprise
-- Site web PME Montréal
-- Marketing PME Québec
-- Agence TikTok Montréal
-- Stratégie marketing digital
+- Publicitï¿½ Meta Quï¿½bec
+- Publicitï¿½ Instagram entreprise
+- Site web PME Montrï¿½al
+- Marketing PME Quï¿½bec
+- Agence TikTok Montrï¿½al
+- Stratï¿½gie marketing digital
 
 **Long-tail Keywords:**
-- Agence de marketing numérique pour PME Montréal
-- Création de contenu vidéo pour entreprises Québec
-- Gestion complète des réseaux sociaux entreprise
-- Publicité en ligne pour entrepreneurs Québec
+- Agence de marketing numï¿½rique pour PME Montrï¿½al
+- Crï¿½ation de contenu vidï¿½o pour entreprises Quï¿½bec
+- Gestion complï¿½te des rï¿½seaux sociaux entreprise
+- Publicitï¿½ en ligne pour entrepreneurs Quï¿½bec

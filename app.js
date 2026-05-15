@@ -37,11 +37,7 @@ const loaderLogo = document.querySelector('.loader-logo img');
 // IMAGE PRELOADER - Load all images during loader
 // ============================================
 const imagesToPreload = [
-    'project1.jpg',
-    'project2.jpg', 
-    'project3.jpg',
-    'project4.jpg',
-    'pictureGreat.jpg',
+    'innerImage.jpg',
     'fullImage.jpg'
 ];
 
@@ -835,15 +831,14 @@ fr: {
     'nav.home': 'Accueil',
     'nav.about': '\u00C0 propos',
     'nav.services': 'Services',
-    'nav.work': 'R\u00E9alisations',
     'nav.contact': 'Contact',
         
     // Hero
-    'hero.tag': 'Agence de Marketing Num\u00E9rique',
-    'hero.title1': 'Contenu',
-    'hero.title2': 'Authentique.',
-    'hero.title3': 'R\u00E9sultats Concrets.',
-    'hero.subtitle': 'Nous aidons les entreprises \u00E0 b\u00E2tir une pr\u00E9sence en ligne forte, coh\u00E9rente et performante gr\u00E2ce \u00E0 du contenu strat\u00E9gique.',
+    'hero.tag': 'Agence de Marketing Num\u00E9rique \u00E0 Montr\u00E9al',
+    'hero.title1': 'Marketing num\u00E9rique',
+    'hero.title2': 'pour PME locales.',
+    'hero.title3': 'Contenu qui convertit.',
+    'hero.subtitle': 'Nous aidons les entreprises de Montr\u00E9al et du Qu\u00E9bec \u00E0 attirer plus de clients avec du contenu vid\u00E9o, des sites web, du SEO local, des m\u00E9dias sociaux et des campagnes publicitaires cibl\u00E9es.',
     'hero.cta1': 'Nos Services',
     'hero.cta2': 'Nous Contacter',
     'hero.scroll': 'D\u00E9filer',
@@ -864,23 +859,23 @@ fr: {
         
     // Services
     'services.tag': 'Ce Que Nous Faisons',
-    'services.title': 'Des services qui transforment votre vision',
-    'services.s1.title': 'Pr\u00E9sence',
-    'services.s1.desc': '\u00CAtre visible au bon endroit, au bon moment.',
-        'services.s1.f1': 'Cr\u00E9ation de sites web orient\u00E9s vers les conversions',
-        'services.s1.f2': 'Optimisation SEO locale (Google & Maps)',
-        'services.s1.f3': 'Cr\u00E9ation et gestion de profils Google Business',
-        'services.s1.f4': 'Cr\u00E9ation de contenu',
-        'services.s1.f5': 'Pr\u00E9sence coh\u00E9rente sur les r\u00E9seaux sociaux',
-        'services.s2.title': 'Positionnement',
-        'services.s2.desc': 'Une base solide avant d\'investir en publicit\u00E9.',
-        'services.s2.f1': 'Positionnement clair et cr\u00E9dible pour entrepreneurs',
-        'services.s2.f2': 'Image de marque adapt\u00E9e au secteur',
-        'services.s2.f3': 'Messages simples qui inspirent confiance',
-        'services.s2.f4': 'Structure marketing pens\u00E9e pour convertir',
-        'services.s2.f5': 'Optimisation pour le march\u00E9 local',
-        'services.s3.title': 'Croissance',
-        'services.s3.desc': 'Plus de demandes, sans surcharger l\'op\u00E9rationnel.',
+    'services.title': 'Marketing num\u00E9rique pour entreprises locales au Qu\u00E9bec',
+    'services.s1.title': 'Sites web et SEO local',
+    'services.s1.desc': '\u00CAtre visible sur Google, Maps et les bons canaux locaux.',
+        'services.s1.f1': 'Cr\u00E9ation de sites web rapides pour PME et entrepreneurs',
+        'services.s1.f2': 'Optimisation SEO locale pour Montr\u00E9al et le Qu\u00E9bec',
+        'services.s1.f3': 'Optimisation Google Business Profile et Google Maps',
+        'services.s1.f4': 'Pages de services pens\u00E9es pour convertir les visiteurs',
+        'services.s1.f5': 'Messages clairs pour expliquer vos offres et vos diff\u00E9renciateurs',
+        'services.s2.title': 'Contenu vid\u00E9o et m\u00E9dias sociaux',
+        'services.s2.desc': 'Du contenu qui montre l\'entreprise, l\'\u00E9quipe et le travail sur le terrain.',
+        'services.s2.f1': 'Cr\u00E9ation de Reels Instagram, TikTok et vid\u00E9os courtes',
+        'services.s2.f2': 'Captation vid\u00E9o, photo et drone pour vos projets',
+        'services.s2.f3': 'Calendrier de contenu adapt\u00E9 \u00E0 votre secteur',
+        'services.s2.f4': 'Montage de contenu authentique pour attirer clients et candidats',
+        'services.s2.f5': 'Gestion coh\u00E9rente de vos m\u00E9dias sociaux',
+        'services.s3.title': 'Publicit\u00E9 et g\u00E9n\u00E9ration de leads',
+        'services.s3.desc': 'Plus de demandes qualifi\u00E9es, sans surcharger l\'op\u00E9rationnel.',
         'services.s3.f1': 'G\u00E9n\u00E9ration de leads qualifi\u00E9s',
         'services.s3.f2': 'Campagnes publicitaires cibl\u00E9es (Meta, TikTok & Google)',
         'services.s3.f3': 'Suivi des performances et optimisation continue',
@@ -893,38 +888,15 @@ fr: {
         'reveal.text': 'Notre \u00E9quipe combine strat\u00E9gie marketing et cr\u00E9ativit\u00E9 pour cr\u00E9er du contenu qui repr\u00E9sente vraiment votre entreprise. De la premi\u00E8re id\u00E9e \u00E0 la conversion, nous sommes l\u00E0 pour maximiser votre pr\u00E9sence en ligne.',
         'reveal.cta': 'D\u00E9marrer Votre Projet',
         
-        // Work Section
-        'work.tag': 'Nos R\u00E9alisations',
-        'work.title': 'Projets S\u00E9lectionn\u00E9s',
-        'work.subtitle': 'Cliquez sur un projet pour en d\u00E9couvrir plus',
-        'work.cta': 'D\u00E9marrer Votre Projet',
-        'work.viewProject': 'Voir le Projet',
-        'work.duration': 'Dur\u00E9e',
-        'work.services': 'Services',
-        'work.p1.cat': 'Commercial',
-        'work.p1.title': 'Complexe Tour Moderne',
-        'work.p1.desc': 'Documentation num\u00E9rique compl\u00E8te d\'un d\u00E9veloppement commercial de 20 \u00E9tages au centre-ville de Montr\u00E9al. Comprend des images par drone, time-lapse de construction et visualisation 3D.',
-        'work.p1.dur': '18 mois',
-        'work.p2.cat': 'R\u00E9sidentiel',
-        'work.p2.title': 'R\u00E9sidence de Luxe',
-        'work.p2.desc': 'Pr\u00E9sentation cin\u00E9matographique d\'une maison sur mesure de 4,5M$ \u00E0 Tremblant. Documentation compl\u00E8te du design int\u00E9rieur et photographie lifestyle.',
-        'work.p2.dur': '12 mois',
-        'work.p3.cat': 'Mixte',
-        'work.p3.title': 'D\u00E9veloppement Urbain',
-        'work.p3.desc': 'R\u00E9sidentiel multi-unit\u00E9s avec commerce au rez-de-chauss\u00E9e. Documentation compl\u00E8te incluant visites virtuelles pour le marketing pr\u00E9-vente.',
-        'work.p3.dur': '24 mois',
-        'work.p4.cat': 'R\u00E9sidentiel',
-        'work.p4.title': 'Villa Contemporaine',
-        'work.p4.desc': 'Chef-d\'\u0153uvre architectural moderne avec design durable. Pr\u00E9-visualisation 3D et couverture drone compl\u00E8te.',
-        'work.p4.dur': '14 mois',
-        'work.p5.cat': 'Drone',
-        'work.p5.title': 'Prise de Vue Drone',
-        'work.p5.desc': 'S\u00E9ance de prise de vue par drone avec lunettes FPV pour un client. Capture a\u00E9rienne immersive offrant des perspectives uniques et cin\u00E9matographiques.',
-        
-        // G3 Constructions Section
-        'g3.tag': 'Client Vedette',
-        'g3.title': 'G3 Constructions',
-        'g3.subtitle': 'Projets r\u00E9alis\u00E9s pour G3 Constructions',
+        // FAQ
+        'faq.tag': 'Questions Fr\u00E9quentes',
+        'faq.title': 'Marketing num\u00E9rique pour PME \u00E0 Montr\u00E9al',
+        'faq.q1': 'Quels services offre Corbo Digital?',
+        'faq.a1': 'Corbo Digital aide les PME avec la cr\u00E9ation de contenu vid\u00E9o, la gestion Instagram et TikTok, les sites web, le SEO local, la publicit\u00E9 en ligne et la g\u00E9n\u00E9ration de leads.',
+        'faq.q2': 'Travaillez-vous avec des entreprises locales?',
+        'faq.a2': 'Oui. L\'agence accompagne les entreprises de Montr\u00E9al et du Qu\u00E9bec qui veulent am\u00E9liorer leur visibilit\u00E9, obtenir plus de demandes et mieux pr\u00E9senter leur \u00E9quipe.',
+        'faq.q3': 'Pouvez-vous aider au recrutement?',
+        'faq.a3': 'Oui. Le contenu vid\u00E9o peut pr\u00E9senter la culture, les projets et les avantages de l\'entreprise pour attirer des candidats plus qualifi\u00E9s.',
         
         // Reviews
         'reviews.tag': 'T\u00E9moignages',
@@ -941,22 +913,21 @@ fr: {
         'contact.cta': 'D\u00E9marrer un Projet',
         
         // Footer
-        'footer.copyright': '\u00A9 2025 Corbo Digital \u2014 Tous droits r\u00E9serv\u00E9s.'
+        'footer.copyright': '\u00A9 2026 Corbo Digital \u2014 Tous droits r\u00E9serv\u00E9s.'
     },
     en: {
         // Navigation
         'nav.home': 'Home',
         'nav.about': 'About',
         'nav.services': 'Services',
-        'nav.work': 'Work',
         'nav.contact': 'Contact',
         
         // Hero
-        'hero.tag': 'Digital Marketing Agency',
-        'hero.title1': 'Authentic',
-        'hero.title2': 'Content.',
-        'hero.title3': 'Real Results.',
-        'hero.subtitle': 'We help businesses build a strong, consistent and high-performing online presence through strategic content.',
+        'hero.tag': 'Digital Marketing Agency in Montreal',
+        'hero.title1': 'Digital marketing',
+        'hero.title2': 'for local SMBs.',
+        'hero.title3': 'Content that converts.',
+        'hero.subtitle': 'We help businesses in Montreal and Quebec attract more customers with video content, websites, local SEO, social media and targeted advertising campaigns.',
         'hero.cta1': 'Our Services',
         'hero.cta2': 'Get in Touch',
         'hero.scroll': 'Scroll',
@@ -977,23 +948,23 @@ fr: {
         
         // Services
         'services.tag': 'What We Do',
-        'services.title': 'Services that transform your vision',
-        'services.s1.title': 'Presence',
-        'services.s1.desc': 'Be visible in the right place, at the right time.',
-        'services.s1.f1': 'Conversion-focused website creation',
-        'services.s1.f2': 'Local SEO optimization (Google & Maps)',
-        'services.s1.f3': 'Google Business profile creation & management',
-        'services.s1.f4': 'Content creation',
-        'services.s1.f5': 'Consistent social media presence',
-        'services.s2.title': 'Positioning',
-        'services.s2.desc': 'A solid foundation before investing in advertising.',
-        'services.s2.f1': 'Clear and credible positioning for entrepreneurs',
-        'services.s2.f2': 'Brand image adapted to the sector',
-        'services.s2.f3': 'Simple messages that inspire trust',
-        'services.s2.f4': 'Marketing structure designed to convert',
-        'services.s2.f5': 'Optimization for the local market',
-        'services.s3.title': 'Growth',
-        'services.s3.desc': 'More leads, without overloading operations.',
+        'services.title': 'Digital marketing for local businesses in Quebec',
+        'services.s1.title': 'Websites and local SEO',
+        'services.s1.desc': 'Be visible on Google, Maps and the right local channels.',
+        'services.s1.f1': 'Fast websites for SMBs and entrepreneurs',
+        'services.s1.f2': 'Local SEO optimization for Montreal and Quebec',
+        'services.s1.f3': 'Google Business Profile and Google Maps optimization',
+        'services.s1.f4': 'Service pages designed to convert visitors',
+        'services.s1.f5': 'Clear messaging for your offers and differentiators',
+        'services.s2.title': 'Video content and social media',
+        'services.s2.desc': 'Content that shows the company, the team and the work in the field.',
+        'services.s2.f1': 'Instagram Reels, TikTok and short-form video creation',
+        'services.s2.f2': 'Video, photo and drone capture for your projects',
+        'services.s2.f3': 'Content calendar adapted to your industry',
+        'services.s2.f4': 'Authentic edits to attract clients and candidates',
+        'services.s2.f5': 'Consistent social media management',
+        'services.s3.title': 'Advertising and lead generation',
+        'services.s3.desc': 'More qualified requests, without overloading operations.',
         'services.s3.f1': 'Qualified lead generation',
         'services.s3.f2': 'Targeted advertising campaigns (Meta, TikTok & Google)',
         'services.s3.f3': 'Performance tracking and continuous optimization',
@@ -1007,38 +978,15 @@ fr: {
         'reveal.text': 'Our team combines marketing strategy and creativity to create content that truly represents your business. From the first idea to conversion, we\'re here to maximize your online presence.',
         'reveal.cta': 'Start Your Project',
         
-        // Work Section
-        'work.tag': 'Our Work',
-        'work.title': 'Selected Projects',
-        'work.subtitle': 'Click on a project to discover more',
-        'work.cta': 'Start Your Project',
-        'work.viewProject': 'View Project',
-        'work.duration': 'Duration',
-        'work.services': 'Services',
-        'work.p1.cat': 'Commercial',
-        'work.p1.title': 'Modern Tower Complex',
-        'work.p1.desc': 'Full digital documentation of a 20-story commercial development in downtown Montreal. Includes drone footage, time-lapse construction, and 3D visualization.',
-        'work.p1.dur': '18 months',
-        'work.p2.cat': 'Residential',
-        'work.p2.title': 'Luxury Residence',
-        'work.p2.desc': 'Cinematic showcase of a custom $4.5M home construction in Tremblant. Complete with interior design documentation and lifestyle photography.',
-        'work.p2.dur': '12 months',
-        'work.p3.cat': 'Mixed-Use',
-        'work.p3.title': 'Urban Development',
-        'work.p3.desc': 'Multi-unit residential with ground-floor retail space. Full documentation including virtual tours for pre-sales marketing.',
-        'work.p3.dur': '24 months',
-        'work.p4.cat': 'Residential',
-        'work.p4.title': 'Contemporary Villa',
-        'work.p4.desc': 'Modern architectural masterpiece featuring sustainable design. 3D pre-visualization and complete drone coverage package.',
-        'work.p4.dur': '14 months',
-        'work.p5.cat': 'Drone',
-        'work.p5.title': 'Drone Photography',
-        'work.p5.desc': 'FPV drone photography session with drone goggles for a client. Immersive aerial capture providing unique and cinematic perspectives.',
-        
-        // G3 Constructions Section
-        'g3.tag': 'Featured Client',
-        'g3.title': 'G3 Constructions',
-        'g3.subtitle': 'Projects completed for G3 Constructions',
+        // FAQ
+        'faq.tag': 'Frequently Asked Questions',
+        'faq.title': 'Digital marketing for SMBs in Montreal',
+        'faq.q1': 'What services does Corbo Digital offer?',
+        'faq.a1': 'Corbo Digital helps SMBs with video content creation, Instagram and TikTok management, websites, local SEO, online advertising and lead generation.',
+        'faq.q2': 'Do you work with local businesses?',
+        'faq.a2': 'Yes. The agency supports businesses in Montreal and Quebec that want to improve visibility, get more requests and present their team more clearly.',
+        'faq.q3': 'Can you help with recruiting?',
+        'faq.a3': 'Yes. Video content can show the culture, projects and benefits of the company to attract more qualified candidates.',
         
         // Reviews
         'reviews.tag': 'Testimonials',
@@ -1055,7 +1003,7 @@ fr: {
         'contact.cta': 'Start a Project',
         
         // Footer
-        'footer.copyright': '© 2025 Corbo Digital — All rights reserved.'
+        'footer.copyright': '\u00A9 2026 Corbo Digital \u2014 All rights reserved.'
     }
 };
 
@@ -1076,8 +1024,8 @@ function setLanguage(lang) {
     
     // Update page title
     document.title = lang === 'fr' 
-        ? 'Corbo Digital | Agence de Marketing Num\u00E9rique'
-        : 'Corbo Digital | Digital Marketing Agency';
+        ? 'Corbo Digital | Marketing num\u00E9rique et contenu vid\u00E9o \u00E0 Montr\u00E9al'
+        : 'Corbo Digital | Digital marketing and video content in Montreal';
     
     // Update all translatable elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
